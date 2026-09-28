@@ -1,8 +1,8 @@
-TAYLOR BROOKS
-Austin, TX | taylor.brooks@example.local
+ADITI SEN
+Kolkata, West Bengal | aditi.sen@example.local | +91 98765 00008
 
 WORK EXPERIENCE
-Junior Python Developer | Local Tech Hub | 2023 - Present
+Junior Python Developer | Local Tech Hub (Salt Lake Sector V, Kolkata) | 2023 - Present
 Helped build internal data entry tools using Python and SQLite. Fixed bug tickets and assisted with database maintenance.
 Wrote simple unit tests. Worked with Git for version control.
 

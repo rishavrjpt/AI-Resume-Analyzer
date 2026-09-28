@@ -401,6 +401,68 @@ body {
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
+/* Indian Tech Role Quick Selectors */
+.badge-role-tag {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: #1e40af;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.quick-role-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.quick-chip-label {
+  font-size: 0.725rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.btn-role-chip {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  color: var(--text-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-role-chip:hover {
+  background-color: #eff6ff;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Similarity Empty Prompt */
+.similarity-empty-prompt {
+  padding: 0.25rem 0;
+}
+
+.sim-empty-title {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #b45309;
+}
+
+.sim-empty-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+  line-height: 1.4;
+}
+
 .form-actions {
   display: flex;
   gap: 0.75rem;

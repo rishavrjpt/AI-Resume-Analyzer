@@ -1,22 +1,22 @@
 [
   {
-    "id": "jd_backend_engineer",
-    "title": "Senior Backend Engineer (Python / Go / AWS)",
-    "description": "We are seeking a Backend Engineer with 3+ years of experience in Python and Go to build high-scale microservices. Requirements:\n- Strong proficiency with Python, FastAPI, or Django.\n- Experience designing relational schemas in PostgreSQL and in-memory caches like Redis.\n- Hands-on experience with Docker, Kubernetes, and AWS cloud services (EC2, S3, RDS).\n- Familiarity with CI/CD pipelines, automated testing with pytest, and RESTful API architecture.\n- Experience with distributed streaming systems such as Apache Kafka or RabbitMQ is a strong plus."
+    "id": "jd_backend_engineer_india",
+    "title": "Senior Backend Engineer (Bengaluru, Karnataka — Fintech / Scale)",
+    "description": "Location: Bengaluru (Bangalore), Karnataka (Hybrid)\nWe are looking for a Senior Backend Engineer (3-6 years) for our high-throughput transactional platform. Requirements:\n- Strong proficiency in Python (FastAPI, Django) or Go, and designing microservices.\n- Deep understanding of relational databases (PostgreSQL, MySQL) and Redis in-memory caching.\n- Hands-on experience with Docker, Kubernetes, and AWS (EC2, S3, RDS, EKS).\n- Experience with high-scale event streaming using Apache Kafka or RabbitMQ.\n- B.Tech / B.E. / M.Tech in Computer Science or equivalent from an accredited university.\n- Good grasp of Data Structures, Algorithms (DSA), System Design, and automated unit testing with Pytest."
   },
   {
-    "id": "jd_data_analyst",
-    "title": "Data Analyst (SQL / BI / Product Analytics)",
-    "description": "Acme Corp is hiring a Data Analyst to join our Product Analytics team. In this role, you will:\n- Write advanced SQL queries across Snowflake and BigQuery data warehouses.\n- Build interactive dashboards in Tableau and Power BI for executive leadership.\n- Conduct A/B testing and statistical analysis using Python (Pandas, NumPy, Scipy) or R.\n- Partner with cross-functional stakeholders to define KPIs and analyze customer retention and churn."
+    "id": "jd_data_analyst_india",
+    "title": "Data Analyst (Gurugram / NCR — Product & E-Commerce)",
+    "description": "Location: Gurugram (Gurgaon), Haryana / Delhi NCR\nLeading consumer internet startup is hiring a Data Analyst (2-4 years experience):\n- Strong hands-on SQL proficiency across BigQuery, Snowflake, or PostgreSQL data warehouses.\n- Experience designing interactive business dashboards in Tableau and Power BI for leadership.\n- Hands-on data wrangling in Python (Pandas, NumPy, Scipy) or R, with knowledge of A/B Testing.\n- Build and maintain data transformation models using dbt and Apache Airflow.\n- B.Tech / BCA / MCA / M.Sc Statistics or related quantitative degree."
   },
   {
-    "id": "jd_ml_engineer",
-    "title": "Machine Learning Engineer (NLP / PyTorch / Transformers)",
-    "description": "Join our AI research and applied engineering team. Requirements:\n- M.S. or B.S. in Computer Science or related quantitative field.\n- Proven expertise in PyTorch or TensorFlow, Hugging Face Transformers, and NLP libraries (spaCy, NLTK).\n- Experience training, fine-tuning, and evaluating transformer models on text classification and entity recognition tasks.\n- Practical knowledge of Docker containerization and model deployment pipelines.\n- Solid understanding of ML evaluation metrics, loss functions, and dataset curation."
+    "id": "jd_ml_engineer_india",
+    "title": "Machine Learning Engineer (Bengaluru / Hyderabad — NLP & Applied AI)",
+    "description": "Location: Bengaluru / Hyderabad (Tech Corridor)\nJoin our Applied AI research team working on document intelligence and NLP:\n- B.Tech / M.Tech / M.S. in Computer Science, Data Science, or related quantitative discipline.\n- Solid experience with PyTorch, TensorFlow, Hugging Face Transformers, and NLP (token classification, embeddings).\n- Familiarity with Scikit-Learn, Pandas, NumPy, and model containerization via Docker.\n- Understanding of parameter-efficient fine-tuning (LoRA), retrieval-augmented pipelines, and model evaluation metrics."
   },
   {
-    "id": "jd_frontend_developer",
-    "title": "Frontend Engineer (React / TypeScript / Next.js)",
-    "description": "We are looking for a passionate Frontend Engineer to craft fast and accessible web apps. Key responsibilities:\n- Build web interfaces using React, TypeScript, Next.js, and modern CSS frameworks like Tailwind CSS.\n- Maintain and evolve component design systems with an emphasis on WCAG accessibility compliance.\n- Write comprehensive client-side unit and integration tests using Jest and Cypress.\n- Work closely with backend teams on REST and GraphQL API integrations."
+    "id": "jd_frontend_developer_india",
+    "title": "Senior Frontend Developer (Pune / Bengaluru — React, Next.js, TypeScript)",
+    "description": "Location: Pune / Bengaluru (Remote-friendly)\nProduct engineering squad hiring a Frontend Developer (2-5 years experience):\n- Strong expertise in JavaScript (ES6+), TypeScript, React, and Next.js.\n- Clean modern UI styling with Tailwind CSS or CSS Modules, emphasizing responsive design.\n- Experience with state management (Redux Toolkit) and RESTful / GraphQL API integration.\n- Automated unit testing with Jest and Cypress.\n- B.Tech / B.E. / MCA or equivalent degree."
   }
 ]

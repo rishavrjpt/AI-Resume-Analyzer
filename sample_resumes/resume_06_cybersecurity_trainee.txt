@@ -1,8 +1,8 @@
-PRIYA PATEL
-Dallas, TX | priya.patel@example.local | (555) 010-0006 | linkedin.com/in/example-priyapatel
+PRIYA SHUKLA
+Hyderabad, Telangana | priya.shukla@example.local | +91 98765 00006 | linkedin.com/in/example-priyashukla
 
 PROFESSIONAL SUMMARY
-Cybersecurity analyst trainee with practical experience in network vulnerability scanning, threat monitoring, SIEM log analysis, and incident response fundamentals.
+Cybersecurity analyst trainee with practical experience in network vulnerability scanning, threat monitoring, SIEM log analysis, and SOC incident triage for enterprise environments.
 
 CERTIFICATIONS
 - CompTIA Security+ (SY0-601) - Certified October 2023
@@ -16,19 +16,19 @@ Networking: TCP/IP, DNS, VPN, Firewalls, Subnetting, IDS/IPS (Snort)
 Scripting & Automation: Python, Bash, PowerShell
 
 EXPERIENCE
-Information Security Intern | ShieldGate Defense | June 2023 - Present
-- Monitored security alerts in Splunk SIEM across 350 endpoints, triaging potential phishing and brute-force events.
-- Conducted internal vulnerability assessments using Nessus, documenting 14 high-severity CVEs for remediation.
+Information Security Intern | ShieldGate Defense (Cyberabad, Hyderabad) | June 2023 - Present
+- Monitored security alerts in Splunk SIEM across 350 endpoints, triaging potential phishing and brute-force authentication events.
+- Conducted internal vulnerability assessments using Nessus, documenting 14 high-severity CVEs for infrastructure remediation.
 - Configured firewall rule policies and analyzed packet captures using Wireshark to investigate anomalous egress traffic.
-- Authored 5 standard operating procedure (SOP) playbooks for common phishing containment scenarios.
+- Authored 5 standard operating procedure (SOP) playbooks for common security incident containment scenarios.
 
-IT Support Specialist | Lone Star College Helpdesk | August 2021 - May 2023
-- Resolved 25+ daily desktop support tickets involving active directory account permissions and MFA setup.
-- Enforced endpoint antivirus compliance across 200 campus laboratory workstations.
+IT Support Specialist | Hitech City Campus Helpdesk | August 2021 - May 2023
+- Resolved 25+ daily desktop support tickets involving Active Directory account permissions and MFA setup.
+- Enforced endpoint antivirus compliance across 200 laboratory workstations.
 
 EDUCATION
-Associate of Applied Science in Cybersecurity
-Dallas College, Graduated May 2023 | Dean's Honor Roll
+B.Tech in Computer Science (Cyber Security)
+Jawaharlal Nehru Technological University (JNTU) Hyderabad, Graduated 2023 | CGPA: 8.4/10.0
 
 HANDS-ON LAB PROJECTS
 Defensive Home Lab Infrastructure

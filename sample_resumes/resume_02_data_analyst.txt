@@ -1,11 +1,11 @@
-JORDAN TAYLOR
-Chicago, IL | jordan.taylor@example.local | (555) 010-0002 | linkedin.com/in/example-jordantaylor
+POOJA VERMA
+Gurugram, Haryana / Delhi NCR | pooja.verma@example.local | +91 98765 00002 | linkedin.com/in/example-poojaverma
 
 EDUCATION
-Master of Science in Business Analytics
-Midwest Technical Institute, 2021
-Bachelor of Science in Statistics
-University of Illinois, 2019
+M.Sc in Business Analytics & Statistics
+Delhi School of Economics, University of Delhi, 2021 | 82% First Class
+B.Sc (Hons) in Mathematics
+St. Stephen's College, Delhi, 2019
 
 SKILLS & COMPETENCIES
 - Data Analysis & Modeling: SQL, Python (Pandas, NumPy, Scikit-Learn), R, Statistical Inference, A/B Testing
@@ -14,13 +14,13 @@ SKILLS & COMPETENCIES
 - Office & Collaboration: Excel (VLOOKUP, Pivot Tables, Macros), Jira, Git
 
 PROFESSIONAL EXPERIENCE
-Senior Data Analyst | Insightful Retail Analytics | July 2021 - Present
-* Engineered automated reporting pipelines in dbt and BigQuery, eliminating 15 hours of manual weekly reporting.
-* Designed and analyzed 24 A/B tests for checkout flow optimizations, generating an estimated 4.5% conversion uplift.
-* Built interactive executive dashboards in Tableau tracking customer lifetime value (LTV) and churn metrics.
+Senior Product Data Analyst | BlinkCommerce India (Gurugram) | July 2021 - Present
+* Engineered automated reporting pipelines in dbt and BigQuery, eliminating 15 hours of manual weekly reporting across fast-delivery operations.
+* Designed and analyzed 24 A/B tests for cart checkout flows, generating an estimated 4.5% conversion uplift across tier-1 and tier-2 Indian cities.
+* Built interactive executive dashboards in Tableau tracking customer retention, GMV, and churn metrics.
 * Partnered with product and marketing managers to translate complex analytics findings into actionable campaign strategies.
 
-Data Analyst | Horizon Financial Group | June 2019 - August 2020
+Data Analyst | Horizon Financial Services (Noida) | June 2019 - August 2020
 * Queried complex financial transactions across PostgreSQL data warehouses using advanced SQL window functions.
 * Cleaned and imputed missing customer behavioral data using Python (Pandas and Scipy).
 * Created weekly risk-scoring dashboards in Power BI distributed to senior executive stakeholders.

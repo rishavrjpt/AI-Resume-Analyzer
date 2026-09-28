@@ -1,14 +1,14 @@
-SAMIRA KHAN
-Seattle, WA | samira.khan@example.local | (555) 010-0003 | github.com/example/samirakhan
+SNEHA KULKARNI
+Bengaluru, Karnataka | sneha.kulkarni@example.local | +91 98765 00003 | github.com/example/snehakulkarni
 
 OBJECTIVE
-Motivated Computer Science graduate student seeking a Machine Learning Engineering Internship to apply skills in deep learning, natural language processing, and scalable model deployment.
+Computer Science post-graduate student seeking a Machine Learning Engineering position to apply skills in deep learning, natural language processing, and scalable transformer deployment.
 
 EDUCATION
-M.S. in Computer Science (Concentration: Artificial Intelligence)
-University of Washington, Expected Graduation: June 2025 | Current GPA: 3.92
-B.S. in Computer Engineering
-Purdue University, Graduated May 2023
+M.Tech in Artificial Intelligence
+Indian Institute of Science (IISc), Bengaluru | Expected June 2025 | Current CGPA: 9.1/10.0
+B.Tech in Computer Engineering
+College of Engineering, Pune (COEP) | Graduated May 2023 | CGPA: 8.9/10.0
 
 RELEVANT COURSEWORK
 Deep Learning, Natural Language Processing, Computer Vision, Distributed Systems, Reinforcement Learning
@@ -30,10 +30,10 @@ Multi-Agent Reinforcement Learning Simulator
 • Analyzed convergence properties across varying reward structures and batch sizes.
 
 RESEARCH & WORK EXPERIENCE
-Graduate Research Assistant | UW NLP Lab | September 2023 - Present
-• Conducted empirical research on parameter-efficient fine-tuning (LoRA) for large language models under resource constraints.
-• Co-authored submission to an academic workshop detailing vocabulary pruning techniques for domain adaptation.
+Graduate Research Assistant | IISc AI Lab | September 2023 - Present
+• Conducted empirical research on parameter-efficient fine-tuning (LoRA) for multilingual large language models under GPU memory constraints.
+• Co-authored submission detailing vocabulary pruning techniques for Indic language domain adaptation.
 
-Software Engineering Intern | DataWave Systems | June 2022 - August 2022
-• Developed Python scripts to preprocess and validate 10TB of sensor telemetry data stored in Amazon S3.
+Machine Learning Intern | DataWave Systems (Hyderabad) | June 2022 - August 2022
+• Developed Python scripts to preprocess and validate 10TB of telemetry data stored in Amazon S3.
 • Optimized data loading routines, decreasing ETL pipeline latency by 25%.

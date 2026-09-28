@@ -1,18 +1,18 @@
-MARCUS VANCE
-Denver, CO | marcus.vance@example.local | (555) 010-0005 | github.com/example/marcusvance
+AARAV PATEL
+Pune, Maharashtra | aarav.patel@example.local | +91 98765 00005 | github.com/example/aaravpatel
 
 PROFILE
-Backend Software Engineer focusing on microservice architectures, event-driven systems, and relational database optimization. 6 years of industry experience designing resilient back-end services.
+Backend Software Engineer focusing on microservice architectures, event-driven streaming systems, and relational database optimization with 6 years of industry experience building scalable services.
 
 PROFESSIONAL EXPERIENCE
-Senior Backend Engineer | Apex Logistics Platform | March 2021 - Present
-- Built real-time package tracking microservices using Go, gRPC, and Apache Kafka handling 50,000 events/second.
+Senior Backend Engineer | Apex Logistics Hub (Pune) | March 2021 - Present
+- Built real-time package delivery tracking microservices using Go, gRPC, and Apache Kafka handling 50,000 shipment events/second across pan-India routes.
 - Designed database schemas in PostgreSQL and implemented caching layers using Redis clusters to minimize read contention.
 - Provisioned cloud infrastructure on Google Cloud Platform (GCP) using Kubernetes and Terraform for automated continuous deployment.
 - Wrote end-to-end integration tests using Docker Compose and established CI/CD pipelines via GitLab CI.
 
-Backend Engineer | Summit Financial Systems | June 2018 - February 2021
-- Developed payment processing APIs in Java using Spring Boot and Hibernate ORM.
+Backend Engineer | Pune Digital Platforms | June 2018 - February 2021
+- Developed payment gateway processing APIs in Java using Spring Boot and Hibernate ORM.
 - Managed event-driven transactional workflows using RabbitMQ and MySQL databases.
 - Automated API regression testing with JUnit, Mockito, and Postman collections.
 - Collaborated with security teams to implement OAuth2 and JWT authorization schemes across all internal endpoints.
@@ -23,8 +23,8 @@ Event-Driven Order Processing Engine
 - Persisted operational states into MongoDB and published analytics feeds into Elasticsearch.
 
 Distributed Rate Limiter
-- Implemented sliding-window counter rate limiting in Go backed by Redis Lua scripts to protect downstream services.
+- Implemented sliding-window counter rate limiting in Go backed by Redis Lua scripts to protect downstream services from spikes.
 
 EDUCATION
-Bachelor of Science in Information Systems
-Colorado State University, 2018
+B.Tech in Information Technology
+Savitribai Phule Pune University, 2018 | First Class with Distinction

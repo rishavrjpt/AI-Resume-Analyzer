@@ -92,13 +92,21 @@
               </div>
             </div>
 
-            <!-- Job Description Input -->
+            <!-- Job Description Input with Indian Tech Role Quick Selectors -->
             <div class="form-group" style="margin-top: 1.25rem;">
               <div class="form-header-row">
                 <label for="jobDescriptionInput" class="form-label">Target Job Description (Optional)</label>
-                <button type="button" class="btn-text-link" id="btnLoadSampleJob">Load Example Role</button>
+                <span class="badge-role-tag">🇮🇳 India Tech Edition</span>
               </div>
-              <textarea id="jobDescriptionInput" class="form-textarea" rows="6" placeholder="Paste the job requirements or target position details here to compare technical keywords and calculate wording alignment..."></textarea>
+              <!-- Quick Selectors for Indian Tech Hubs -->
+              <div class="quick-role-chips" id="quickRoleChips">
+                <span class="quick-chip-label">Quick select role:</span>
+                <button type="button" class="btn-role-chip" data-role="backend">📍 Bengaluru: Backend</button>
+                <button type="button" class="btn-role-chip" data-role="analyst">📍 Gurugram: Data Analyst</button>
+                <button type="button" class="btn-role-chip" data-role="ml">📍 Hyderabad: AI/ML</button>
+                <button type="button" class="btn-role-chip" data-role="frontend">📍 Pune: Frontend</button>
+              </div>
+              <textarea id="jobDescriptionInput" class="form-textarea" rows="6" placeholder="Paste target job requirements here to compare technical keywords and calculate alignment... (or click a quick role above)"></textarea>
             </div>
 
             <!-- Form Actions -->
@@ -126,7 +134,7 @@
               <line x1="16" y1="17" x2="8" y2="17"></line>
             </svg>
             <h3>Ready to Inspect</h3>
-            <p>Select a resume file on the left and click <strong>Analyze Document</strong> to view extracted sections, verified skills, wording alignment, and practical improvement suggestions.</p>
+            <p>Select an Indian tech resume on the left and click <strong>Analyze Document</strong> to view extracted sections, verified skills, wording alignment, and practical improvement suggestions.</p>
           </div>
 
           <!-- Loading State -->
@@ -155,19 +163,34 @@
                 <span class="metric-value" id="resSkillsCount">0</span>
                 <span class="metric-sub" id="resCandidateTerms">0 candidate terms</span>
               </div>
-              <div class="metric-card highlight-metric">
+              <div class="metric-card highlight-metric" id="similarityMetricCard">
                 <span class="metric-label">Text Similarity Estimate</span>
-                <div class="similarity-scores-row">
-                  <div class="sim-chip">
-                    <span class="sim-title">Lexical (TF-IDF):</span>
-                    <span class="sim-num" id="resLexicalSim">—</span>
+                
+                <!-- Displayed when Job Description WAS provided -->
+                <div id="similarityActiveView" style="display:none;">
+                  <div class="similarity-scores-row">
+                    <div class="sim-chip">
+                      <span class="sim-title">Lexical (TF-IDF):</span>
+                      <span class="sim-num" id="resLexicalSim">—</span>
+                    </div>
+                    <div class="sim-chip">
+                      <span class="sim-title">Semantic (Dense):</span>
+                      <span class="sim-num" id="resSemanticSim">—</span>
+                    </div>
                   </div>
-                  <div class="sim-chip">
-                    <span class="sim-title">Semantic (Dense):</span>
-                    <span class="sim-num" id="resSemanticSim">—</span>
+                  <span class="similarity-disclaimer-note">Wording & embedding comparison only. Not an applicant rating.</span>
+                </div>
+
+                <!-- Displayed when NO Job Description was provided (Clear explanation instead of --) -->
+                <div id="similarityEmptyView">
+                  <div class="similarity-empty-prompt">
+                    <span class="sim-empty-title">No Job Description Provided</span>
+                    <p class="sim-empty-desc">Similarity calculation requires a target job description to compare against.</p>
+                    <button type="button" class="btn btn-secondary btn-sm" id="btnQuickLoadJD" style="margin-top:0.4rem;">
+                      + Load Bengaluru Role & Compare
+                    </button>
                   </div>
                 </div>
-                <span class="similarity-disclaimer-note">Wording & embedding comparison only. Not an applicant rating.</span>
               </div>
             </div>
 

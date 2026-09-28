@@ -1,8 +1,8 @@
-ELENA ROSTOVA
-New York, NY | elena.rostova@example.local | (555) 010-0007
+VIKRAMADITYA RAO
+Noida / Gurugram, Delhi NCR | vikram.rao@example.local | +91 98765 00007
 
 EXECUTIVE SUMMARY
-Results-driven Technical Project Manager with 7+ years of experience leading cross-functional agile teams delivering software products in fintech and enterprise SaaS. Adept at stakeholder alignment, sprint planning, risk mitigation, and product roadmaps.
+Results-driven Technical Project Manager with 7+ years of experience leading cross-functional agile squads delivering software products in fintech, SaaS, and banking domains. Adept at stakeholder alignment, sprint planning, risk mitigation, and product roadmaps.
 
 CORE COMPETENCIES
 * Methodologies: Agile, Scrum, Kanban, Waterfall, Lean, SDLC
@@ -11,13 +11,13 @@ CORE COMPETENCIES
 * Technical Literacy: SQL, REST APIs, Git basics, Cloud fundamentals
 
 PROFESSIONAL EXPERIENCE
-Senior Technical Project Manager | Finovate Technologies | September 2020 - Present
+Senior Technical Project Manager | Finovate Technologies (Noida) | September 2020 - Present
 * Facilitated daily standups, bi-weekly sprint planning, and retrospective meetings for two distributed engineering squads (16 developers and QA engineers).
-* Delivered a core payment gateway integration on schedule and 8% under budget, enabling $14M in new enterprise volume.
+* Delivered a core payment gateway integration on schedule and 8% under budget, enabling ₹120 Crore in new annual transaction volume.
 * Established cross-team dependency tracking matrix in Jira, reducing cross-sprint blocker delays by 35%.
-* Communicated project milestones, burn-down metrics, and resource constraints to C-level stakeholders in weekly syncs.
+* Communicated project milestones, burn-down metrics, and resource constraints to leadership in weekly syncs.
 
-Project Manager / Scrum Master | Beacon Interactive Media | March 2017 - August 2020
+Project Manager / Scrum Master | Beacon Interactive Systems (Gurugram) | March 2017 - August 2020
 * Guided transition of 4 legacy engineering teams from Waterfall to Scrum methodology, boosting release frequency from quarterly to bi-weekly.
 * Managed end-to-end delivery of 6 customer web portal redesign projects from discovery through QA sign-off.
 * Conducted post-mortem analyses following critical releases to identify process bottlenecks and implement preventative actions.
@@ -28,5 +28,5 @@ CERTIFICATIONS
 - PMI-Agile Certified Practitioner (PMI-ACP) - 2022
 
 EDUCATION
-Bachelor of Business Administration in Management Information Systems
-Pace University, 2016
+B.Tech in Computer Science & Engineering
+Amity University / IP University, Delhi NCR | 2016

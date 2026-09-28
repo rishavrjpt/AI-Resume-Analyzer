@@ -397,6 +397,21 @@
       "name": "Cypress",
       "category": "Methodologies & Tools",
       "aliases": ["cypress", "e2e testing"]
+    },
+    {
+      "name": "Data Structures & Algorithms",
+      "category": "Methodologies & Tools",
+      "aliases": ["dsa", "data structures", "algorithms", "data structures & algorithms", "data structures and algorithms"]
+    },
+    {
+      "name": "System Design",
+      "category": "Methodologies & Tools",
+      "aliases": ["system design", "low level design", "high level design", "lld", "hld"]
+    },
+    {
+      "name": "Microservices",
+      "category": "Backend & Frameworks",
+      "aliases": ["microservices", "microservice architecture", "distributed services"]
     }
   ]
 }

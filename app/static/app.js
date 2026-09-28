@@ -45,6 +45,10 @@ const elements = {
   resCandidateTerms: document.getElementById('resCandidateTerms'),
   resLexicalSim: document.getElementById('resLexicalSim'),
   resSemanticSim: document.getElementById('resSemanticSim'),
+  similarityActiveView: document.getElementById('similarityActiveView'),
+  similarityEmptyView: document.getElementById('similarityEmptyView'),
+  btnQuickLoadJD: document.getElementById('btnQuickLoadJD'),
+  quickRoleChips: document.getElementById('quickRoleChips'),
 
   // Results Subtabs
   subTabs: document.querySelectorAll('.sub-tab'),
@@ -294,6 +298,44 @@ function hideAnalyzeError() {
 // 4. Analyze Resume Execution
 // ----------------------------------------------------
 function setupAnalyzerForm() {
+  // Indian Tech Role Quick Selectors
+  const roleKeywords = {
+    backend: "jd_backend_engineer_india",
+    analyst: "jd_data_analyst_india",
+    ml: "jd_ml_engineer_india",
+    frontend: "jd_frontend_developer_india"
+  };
+
+  document.querySelectorAll('.btn-role-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const role = chip.getAttribute('data-role');
+      const targetId = roleKeywords[role];
+      const found = state.builtInJobs.find(j => j.id === targetId || j.id.includes(role));
+      if (found) {
+        elements.jobDescriptionInput.value = found.description;
+        chip.style.borderColor = 'var(--primary)';
+        chip.style.backgroundColor = '#eff6ff';
+        setTimeout(() => { 
+          chip.style.borderColor = ''; 
+          chip.style.backgroundColor = '';
+        }, 1200);
+      }
+    });
+  });
+
+  if (elements.btnQuickLoadJD) {
+    elements.btnQuickLoadJD.addEventListener('click', () => {
+      if (state.builtInJobs.length > 0) {
+        elements.jobDescriptionInput.value = state.builtInJobs[0].description;
+        if (state.selectedFile) {
+          elements.btnAnalyze.click();
+        } else {
+          elements.jobDescriptionInput.focus();
+        }
+      }
+    });
+  }
+
   elements.btnLoadSampleJob.addEventListener('click', () => {
     if (state.builtInJobs.length > 0) {
       const job = state.builtInJobs[0];
@@ -374,16 +416,27 @@ function displayAnalysisResults(data) {
   elements.resSkillsCount.textContent = skl.total_skills;
   elements.resCandidateTerms.textContent = `${skl.total_candidates} candidate terms`;
 
-  // Similarity
+  // Similarity display
   const comp = data.job_comparison;
   if (comp) {
+    if (elements.similarityActiveView) elements.similarityActiveView.style.display = 'block';
+    if (elements.similarityEmptyView) elements.similarityEmptyView.style.display = 'none';
+
     const sim = comp.similarity_estimates;
-    elements.resLexicalSim.textContent = sim.lexical_similarity_score !== null ? sim.lexical_similarity_score.toFixed(3) : '—';
-    elements.resSemanticSim.textContent = sim.semantic_similarity_score !== null ? sim.semantic_similarity_score.toFixed(3) : 'N/A';
+    const lexScore = sim.lexical_similarity_score;
+    const semScore = sim.semantic_similarity_score;
+
+    elements.resLexicalSim.textContent = lexScore !== null 
+      ? `${Math.round(lexScore * 100)}% (${lexScore.toFixed(3)})` 
+      : '—';
+    elements.resSemanticSim.textContent = semScore !== null 
+      ? `${Math.round(semScore * 100)}% (${semScore.toFixed(3)})` 
+      : 'N/A';
     renderComparison(comp);
   } else {
-    elements.resLexicalSim.textContent = '—';
-    elements.resSemanticSim.textContent = '—';
+    if (elements.similarityActiveView) elements.similarityActiveView.style.display = 'none';
+    if (elements.similarityEmptyView) elements.similarityEmptyView.style.display = 'block';
+
     elements.noComparisonMessage.style.display = 'block';
     elements.comparisonContent.style.display = 'none';
   }
