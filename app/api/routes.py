@@ -205,6 +205,20 @@ async def list_test_samples():
     )
 
 
+@router.get("/sample-resume/{filename}")
+async def get_sample_resume_content(filename: str):
+    """
+    Returns the plain text content of a synthetic sample resume for quick 1-click testing.
+    """
+    safe_name = os.path.basename(filename)
+    filepath = os.path.join("sample_resumes", safe_name)
+    if not os.path.exists(filepath):
+        raise HTTPException(status_code=404, detail="Sample resume not found")
+    with open(filepath, "r", encoding="utf-8") as f:
+        content = f.read()
+    return {"filename": safe_name, "content": content}
+
+
 @router.post("/test-samples/run", response_model=RunSampleTestsResponse)
 async def run_sample_tests(request: RunSampleTestsRequest):
     """

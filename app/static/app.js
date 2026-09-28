@@ -122,14 +122,14 @@ const elements = {
 // Initialization
 // ----------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
-  setupNavigation();
-  setupUploadHandlers();
-  setupAnalyzerForm();
-  setupDashboardControls();
-  setupModal();
-  checkSystemHealth();
-  loadTestSamples();
-  loadInsights();
+  try { setupNavigation(); } catch (e) { console.error('setupNavigation error:', e); }
+  try { setupUploadHandlers(); } catch (e) { console.error('setupUploadHandlers error:', e); }
+  try { setupAnalyzerForm(); } catch (e) { console.error('setupAnalyzerForm error:', e); }
+  try { setupDashboardControls(); } catch (e) { console.error('setupDashboardControls error:', e); }
+  try { setupModal(); } catch (e) { console.error('setupModal error:', e); }
+  try { checkSystemHealth(); } catch (e) { console.error('checkSystemHealth error:', e); }
+  try { loadTestSamples(); } catch (e) { console.error('loadTestSamples error:', e); }
+  try { loadInsights(); } catch (e) { console.error('loadInsights error:', e); }
 });
 
 // ----------------------------------------------------
@@ -297,22 +297,45 @@ function hideAnalyzeError() {
 // ----------------------------------------------------
 // 4. Analyze Resume Execution
 // ----------------------------------------------------
-function setupAnalyzerForm() {
-  // Indian Tech Role Quick Selectors
-  const roleKeywords = {
-    backend: "jd_backend_engineer_india",
-    analyst: "jd_data_analyst_india",
-    ml: "jd_ml_engineer_india",
-    frontend: "jd_frontend_developer_india"
-  };
+const INDIAN_SAMPLE_ROLES = {
+  backend: {
+    id: "jd_backend_engineer_india",
+    title: "Senior Backend Engineer (Bengaluru, Karnataka)",
+    text: "Location: Bengaluru (Bangalore), Karnataka (Hybrid)\nWe are looking for a Senior Backend Engineer (3-6 years) for our high-throughput transactional platform. Requirements:\n- Strong proficiency in Python (FastAPI, Django) or Go, and designing microservices.\n- Deep understanding of relational databases (PostgreSQL, MySQL) and Redis in-memory caching.\n- Hands-on experience with Docker, Kubernetes, and AWS (EC2, S3, RDS, EKS).\n- Experience with high-scale event streaming using Apache Kafka or RabbitMQ.\n- B.Tech / B.E. / M.Tech in Computer Science or equivalent from an accredited university.\n- Good grasp of Data Structures, Algorithms (DSA), System Design, and automated unit testing with Pytest."
+  },
+  analyst: {
+    id: "jd_data_analyst_india",
+    title: "Data Analyst (Gurugram / Delhi NCR)",
+    text: "Location: Gurugram (Gurgaon), Haryana / Delhi NCR\nLeading consumer internet startup is hiring a Data Analyst (2-4 years experience):\n- Strong hands-on SQL proficiency across BigQuery, Snowflake, or PostgreSQL data warehouses.\n- Experience designing interactive business dashboards in Tableau and Power BI for leadership.\n- Hands-on data wrangling in Python (Pandas, NumPy, Scipy) or R, with knowledge of A/B Testing.\n- Build and maintain data transformation models using dbt and Apache Airflow.\n- B.Tech / BCA / MCA / M.Sc Statistics or related quantitative degree."
+  },
+  ml: {
+    id: "jd_ml_engineer_india",
+    title: "Machine Learning Engineer (Bengaluru / Hyderabad)",
+    text: "Location: Bengaluru / Hyderabad (Tech Corridor)\nJoin our Applied AI research team working on document intelligence and NLP:\n- B.Tech / M.Tech / M.S. in Computer Science, Data Science, or related quantitative discipline.\n- Solid experience with PyTorch, TensorFlow, Hugging Face Transformers, and NLP (token classification, embeddings).\n- Familiarity with Scikit-Learn, Pandas, NumPy, and model containerization via Docker.\n- Understanding of parameter-efficient fine-tuning (LoRA), retrieval-augmented pipelines, and model evaluation metrics."
+  },
+  frontend: {
+    id: "jd_frontend_developer_india",
+    title: "Senior Frontend Developer (Pune / Bengaluru)",
+    text: "Location: Pune / Bengaluru (Remote-friendly)\nProduct engineering squad hiring a Frontend Developer (2-5 years experience):\n- Strong expertise in JavaScript (ES6+), TypeScript, React, and Next.js.\n- Clean modern UI styling with Tailwind CSS or CSS Modules, emphasizing responsive design.\n- Experience with state management (Redux Toolkit) and RESTful / GraphQL API integration.\n- Automated unit testing with Jest and Cypress.\n- B.Tech / B.E. / MCA or equivalent degree."
+  }
+};
 
-  document.querySelectorAll('.btn-role-chip').forEach(chip => {
+function setupAnalyzerForm() {
+  // 1. Indian Tech Role Quick Selectors (Target JD)
+  document.querySelectorAll('.quick-role-chips .btn-role-chip').forEach(chip => {
     chip.addEventListener('click', () => {
       const role = chip.getAttribute('data-role');
-      const targetId = roleKeywords[role];
-      const found = state.builtInJobs.find(j => j.id === targetId || j.id.includes(role));
-      if (found) {
-        elements.jobDescriptionInput.value = found.description;
+      if (!role) return;
+      let jdDesc = '';
+      if (state.builtInJobs && state.builtInJobs.length > 0) {
+        const found = state.builtInJobs.find(j => j.id.includes(role) || (INDIAN_SAMPLE_ROLES[role] && j.id === INDIAN_SAMPLE_ROLES[role].id));
+        if (found) jdDesc = found.description;
+      }
+      if (!jdDesc && INDIAN_SAMPLE_ROLES[role]) {
+        jdDesc = INDIAN_SAMPLE_ROLES[role].text;
+      }
+      if (jdDesc && elements.jobDescriptionInput) {
+        elements.jobDescriptionInput.value = jdDesc;
         chip.style.borderColor = 'var(--primary)';
         chip.style.backgroundColor = '#eff6ff';
         setTimeout(() => { 
@@ -323,81 +346,138 @@ function setupAnalyzerForm() {
     });
   });
 
+  // 2. 1-Click Sample Resume Chips (Instant Try with Rahul, Pooja, Sneha, Ananya)
+  document.querySelectorAll('.btn-sample-resume').forEach(chip => {
+    chip.addEventListener('click', async () => {
+      const filename = chip.getAttribute('data-sample');
+      const role = chip.getAttribute('data-role');
+      if (!filename) return;
+
+      chip.disabled = true;
+      const originalText = chip.textContent;
+      chip.textContent = 'Loading...';
+
+      try {
+        const res = await fetch(`/api/sample-resume/${filename}`);
+        if (!res.ok) throw new Error('Could not fetch sample resume');
+        const data = await res.json();
+
+        // Create in-memory File object from sample resume text
+        const sampleFile = new File([data.content], data.filename, { type: 'text/plain' });
+        handleFileSelection(sampleFile);
+
+        // Pre-fill matching Indian job description automatically
+        if (role && INDIAN_SAMPLE_ROLES[role] && elements.jobDescriptionInput) {
+          elements.jobDescriptionInput.value = INDIAN_SAMPLE_ROLES[role].text;
+        }
+
+        chip.style.borderColor = 'var(--primary)';
+        chip.style.backgroundColor = '#eff6ff';
+      } catch (err) {
+        console.error('Failed to load sample resume', err);
+        showAnalyzeError('Could not load sample resume. Please upload a file manually.');
+      } finally {
+        chip.disabled = false;
+        chip.textContent = originalText;
+        setTimeout(() => {
+          chip.style.borderColor = '';
+          chip.style.backgroundColor = '';
+        }, 1200);
+      }
+    });
+  });
+
+  // 3. Quick Load JD Button inside empty similarity view
   if (elements.btnQuickLoadJD) {
     elements.btnQuickLoadJD.addEventListener('click', () => {
-      if (state.builtInJobs.length > 0) {
-        elements.jobDescriptionInput.value = state.builtInJobs[0].description;
-        if (state.selectedFile) {
-          elements.btnAnalyze.click();
-        } else {
-          elements.jobDescriptionInput.focus();
-        }
+      let jd = (state.builtInJobs && state.builtInJobs.length > 0)
+        ? state.builtInJobs[0].description
+        : INDIAN_SAMPLE_ROLES.backend.text;
+
+      if (elements.jobDescriptionInput) {
+        elements.jobDescriptionInput.value = jd;
+      }
+      if (state.selectedFile && elements.btnAnalyze) {
+        elements.btnAnalyze.click();
+      } else if (elements.jobDescriptionInput) {
+        elements.jobDescriptionInput.focus();
       }
     });
   }
 
-  elements.btnLoadSampleJob.addEventListener('click', () => {
-    if (state.builtInJobs.length > 0) {
-      const job = state.builtInJobs[0];
-      elements.jobDescriptionInput.value = job.description;
-    }
-  });
+  // 4. Load Sample Job Description link
+  if (elements.btnLoadSampleJob) {
+    elements.btnLoadSampleJob.addEventListener('click', () => {
+      let jd = (state.builtInJobs && state.builtInJobs.length > 0)
+        ? state.builtInJobs[0].description
+        : INDIAN_SAMPLE_ROLES.backend.text;
+      if (elements.jobDescriptionInput) {
+        elements.jobDescriptionInput.value = jd;
+      }
+    });
+  }
 
-  elements.btnClear.addEventListener('click', () => {
-    clearSelectedFile();
-    elements.jobDescriptionInput.value = '';
-    hideAnalyzeError();
-    elements.analysisResults.style.display = 'none';
-    elements.emptyStatePlaceholder.style.display = 'block';
-  });
+  // 5. Clear Form
+  if (elements.btnClear) {
+    elements.btnClear.addEventListener('click', () => {
+      clearSelectedFile();
+      if (elements.jobDescriptionInput) elements.jobDescriptionInput.value = '';
+      hideAnalyzeError();
+      if (elements.analysisResults) elements.analysisResults.style.display = 'none';
+      if (elements.emptyStatePlaceholder) elements.emptyStatePlaceholder.style.display = 'block';
+    });
+  }
 
-  elements.analyzeForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  // 6. Form Submission
+  if (elements.analyzeForm) {
+    elements.analyzeForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    if (!state.selectedFile) {
-      showAnalyzeError('Please select a resume file (PDF, DOCX, or TXT) before analyzing.');
-      return;
-    }
-
-    hideAnalyzeError();
-    elements.emptyStatePlaceholder.style.display = 'none';
-    elements.analysisResults.style.display = 'none';
-    elements.loadingState.style.display = 'block';
-
-    const formData = new FormData();
-    formData.append('resume_file', state.selectedFile);
-
-    const jdText = elements.jobDescriptionInput.value.trim();
-    if (jdText) {
-      formData.append('job_description', jdText);
-    }
-
-    try {
-      const response = await fetch('/api/analyze', {
-        method: 'POST',
-        body: formData
-      });
-
-      if (!response.ok) {
-        const errJson = await response.json();
-        throw new Error(errJson.detail || 'Analysis request failed.');
+      if (!state.selectedFile) {
+        showAnalyzeError('Please select a resume file (PDF, DOCX, or TXT) or click one of the sample resumes above before analyzing.');
+        return;
       }
 
-      const results = await response.json();
-      state.latestAnalysis = results;
-      displayAnalysisResults(results);
-    } catch (err) {
-      showAnalyzeError(`Error: ${err.message}`);
-      elements.emptyStatePlaceholder.style.display = 'block';
-    } finally {
-      elements.loadingState.style.display = 'none';
-    }
-  });
+      hideAnalyzeError();
+      if (elements.emptyStatePlaceholder) elements.emptyStatePlaceholder.style.display = 'none';
+      if (elements.analysisResults) elements.analysisResults.style.display = 'none';
+      if (elements.loadingState) elements.loadingState.style.display = 'block';
 
-  // Export Listeners
-  elements.btnCopyFeedback.addEventListener('click', copyAllFeedback);
-  elements.btnDownloadReport.addEventListener('click', downloadTextReport);
-  elements.btnDownloadJson.addEventListener('click', downloadJsonReport);
+      const formData = new FormData();
+      formData.append('resume_file', state.selectedFile);
+
+      const jdText = elements.jobDescriptionInput ? elements.jobDescriptionInput.value.trim() : '';
+      if (jdText) {
+        formData.append('job_description', jdText);
+      }
+
+      try {
+        const response = await fetch('/api/analyze', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (!response.ok) {
+          const errJson = await response.json();
+          throw new Error(errJson.detail || 'Analysis request failed.');
+        }
+
+        const results = await response.json();
+        state.latestAnalysis = results;
+        displayAnalysisResults(results);
+      } catch (err) {
+        showAnalyzeError(`Error: ${err.message}`);
+        if (elements.emptyStatePlaceholder) elements.emptyStatePlaceholder.style.display = 'block';
+      } finally {
+        if (elements.loadingState) elements.loadingState.style.display = 'none';
+      }
+    });
+  }
+
+  // 7. Export Listeners
+  if (elements.btnCopyFeedback) elements.btnCopyFeedback.addEventListener('click', copyAllFeedback);
+  if (elements.btnDownloadReport) elements.btnDownloadReport.addEventListener('click', downloadTextReport);
+  if (elements.btnDownloadJson) elements.btnDownloadJson.addEventListener('click', downloadJsonReport);
 }
 
 function displayAnalysisResults(data) {
@@ -616,34 +696,44 @@ function syncCardSelection(checkbox) {
 }
 
 function setupDashboardControls() {
-  elements.btnSelectAllTests.addEventListener('click', () => {
-    document.querySelectorAll('.sample-resume-item').forEach(card => {
-      card.classList.add('selected');
-      card.querySelector('input[type="checkbox"]').checked = true;
+  if (elements.btnSelectAllTests) {
+    elements.btnSelectAllTests.addEventListener('click', () => {
+      document.querySelectorAll('.sample-resume-item').forEach(card => {
+        card.classList.add('selected');
+        const cb = card.querySelector('input[type="checkbox"]');
+        if (cb) cb.checked = true;
+      });
     });
-  });
+  }
 
-  elements.btnDeselectAllTests.addEventListener('click', () => {
-    document.querySelectorAll('.sample-resume-item').forEach(card => {
-      card.classList.remove('selected');
-      card.querySelector('input[type="checkbox"]').checked = false;
+  if (elements.btnDeselectAllTests) {
+    elements.btnDeselectAllTests.addEventListener('click', () => {
+      document.querySelectorAll('.sample-resume-item').forEach(card => {
+        card.classList.remove('selected');
+        const cb = card.querySelector('input[type="checkbox"]');
+        if (cb) cb.checked = false;
+      });
     });
-  });
+  }
 
-  elements.btnResetTestResults.addEventListener('click', () => {
-    state.testResults = null;
-    elements.testResultsTableBody.innerHTML = `
-      <tr>
-        <td colspan="8" class="text-center text-muted">Select synthetic resumes above and click <strong>Run Test on Selected</strong>.</td>
-      </tr>`;
-    elements.testRunMeta.textContent = 'Displayed test results have been reset.';
-    elements.testExportButtons.style.display = 'none';
-    elements.diagSummaryRow.style.display = 'none';
-  });
+  if (elements.btnResetTestResults) {
+    elements.btnResetTestResults.addEventListener('click', () => {
+      state.testResults = null;
+      if (elements.testResultsTableBody) {
+        elements.testResultsTableBody.innerHTML = `
+          <tr>
+            <td colspan="8" class="text-center text-muted">Select synthetic resumes above and click <strong>Run Test on Selected</strong>.</td>
+          </tr>`;
+      }
+      if (elements.testRunMeta) elements.testRunMeta.textContent = 'Displayed test results have been reset.';
+      if (elements.testExportButtons) elements.testExportButtons.style.display = 'none';
+      if (elements.diagSummaryRow) elements.diagSummaryRow.style.display = 'none';
+    });
+  }
 
-  elements.btnRunSelectedTests.addEventListener('click', runSelectedTests);
-  elements.btnExportTestJson.addEventListener('click', exportTestResultsJson);
-  elements.btnExportTestCsv.addEventListener('click', exportTestResultsCsv);
+  if (elements.btnRunSelectedTests) elements.btnRunSelectedTests.addEventListener('click', runSelectedTests);
+  if (elements.btnExportTestJson) elements.btnExportTestJson.addEventListener('click', exportTestResultsJson);
+  if (elements.btnExportTestCsv) elements.btnExportTestCsv.addEventListener('click', exportTestResultsCsv);
 }
 
 async function runSelectedTests() {
@@ -771,9 +861,10 @@ function openSampleDetails(index) {
 }
 
 function setupModal() {
+  if (!elements.sampleDetailModal) return;
   const close = () => { elements.sampleDetailModal.style.display = 'none'; };
-  elements.btnCloseModal.addEventListener('click', close);
-  elements.btnCloseModalFooter.addEventListener('click', close);
+  if (elements.btnCloseModal) elements.btnCloseModal.addEventListener('click', close);
+  if (elements.btnCloseModalFooter) elements.btnCloseModalFooter.addEventListener('click', close);
   elements.sampleDetailModal.addEventListener('click', (e) => {
     if (e.target === elements.sampleDetailModal) close();
   });
