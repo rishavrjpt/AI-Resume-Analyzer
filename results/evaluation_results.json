@@ -1,0 +1,295 @@
+{
+  "evaluation_run_id": "eval_run_1790574021",
+  "timestamp": "2026-09-28T05:40:21.107448+00:00",
+  "status": "completed",
+  "section_classification": {
+    "test_sample_count": 51,
+    "test_documents": 3,
+    "classes": [
+      "education",
+      "experience",
+      "other",
+      "projects",
+      "skills",
+      "summary"
+    ],
+    "baseline_rule_based": {
+      "macro_f1": 0.4181,
+      "weighted_f1": 0.4135,
+      "per_class": {
+        "education": {
+          "precision": 1.0,
+          "recall": 0.375,
+          "f1-score": 0.5454545454545454,
+          "support": 8.0
+        },
+        "experience": {
+          "precision": 1.0,
+          "recall": 0.13333333333333333,
+          "f1-score": 0.23529411764705882,
+          "support": 15.0
+        },
+        "other": {
+          "precision": 0.08333333333333333,
+          "recall": 1.0,
+          "f1-score": 0.15384615384615385,
+          "support": 3.0
+        },
+        "projects": {
+          "precision": 1.0,
+          "recall": 0.42857142857142855,
+          "f1-score": 0.6,
+          "support": 7.0
+        },
+        "skills": {
+          "precision": 1.0,
+          "recall": 0.2727272727272727,
+          "f1-score": 0.42857142857142855,
+          "support": 11.0
+        },
+        "summary": {
+          "precision": 0.75,
+          "recall": 0.42857142857142855,
+          "f1-score": 0.5454545454545454,
+          "support": 7.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          3,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          12,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          8,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          0,
+          0,
+          3
+        ]
+      ]
+    },
+    "ml_classifier": {
+      "macro_f1": 0.8215,
+      "weighted_f1": 0.8115,
+      "per_class": {
+        "education": {
+          "precision": 0.8888888888888888,
+          "recall": 1.0,
+          "f1-score": 0.9411764705882353,
+          "support": 8.0
+        },
+        "experience": {
+          "precision": 0.6842105263157895,
+          "recall": 0.8666666666666667,
+          "f1-score": 0.7647058823529411,
+          "support": 15.0
+        },
+        "other": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 3.0
+        },
+        "projects": {
+          "precision": 1.0,
+          "recall": 0.42857142857142855,
+          "f1-score": 0.6,
+          "support": 7.0
+        },
+        "skills": {
+          "precision": 0.9166666666666666,
+          "recall": 1.0,
+          "f1-score": 0.9565217391304348,
+          "support": 11.0
+        },
+        "summary": {
+          "precision": 0.8,
+          "recall": 0.5714285714285714,
+          "f1-score": 0.6666666666666666,
+          "support": 7.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          13,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          3,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          11,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          0,
+          4
+        ]
+      ]
+    },
+    "comparison_delta_macro_f1": 0.4034,
+    "error_samples": [
+      {
+        "sample_index": 2,
+        "text": "Software Engineer with 4 years of experience building distributed backend systems, RESTful APIs, and cloud-native microservices.",
+        "true_label": "summary",
+        "predicted_label": "experience",
+        "baseline_label": "other"
+      },
+      {
+        "sample_index": 3,
+        "text": "Passionate about system reliability, automated testing, and developer productivity.",
+        "true_label": "summary",
+        "predicted_label": "experience",
+        "baseline_label": "other"
+      },
+      {
+        "sample_index": 18,
+        "text": "OpenAPI Mock Generator - Created an open-source CLI tool in Python that generates realistic synthetic JSON responses.",
+        "true_label": "projects",
+        "predicted_label": "education",
+        "baseline_label": "other"
+      },
+      {
+        "sample_index": 19,
+        "text": "Distributed Task Queue - Implemented a lightweight distributed message queue in Go using Raft consensus.",
+        "true_label": "projects",
+        "predicted_label": "experience",
+        "baseline_label": "other"
+      },
+      {
+        "sample_index": 29,
+        "text": "Migrated legacy single-page application to Next.js 14, improving Core Web Vitals.",
+        "true_label": "experience",
+        "predicted_label": "skills",
+        "baseline_label": "other"
+      },
+      {
+        "sample_index": 34,
+        "text": "Accessible UI Component Library - Authored a fully headless, ARIA-compliant React component library.",
+        "true_label": "projects",
+        "predicted_label": "experience",
+        "baseline_label": "other"
+      },
+      {
+        "sample_index": 37,
+        "text": "Data Engineer committed to designing fault-tolerant real-time data pipelines and scalable analytics infrastructure.",
+        "true_label": "summary",
+        "predicted_label": "experience",
+        "baseline_label": "other"
+      },
+      {
+        "sample_index": 42,
+        "text": "PROFESSIONAL BACKGROUND",
+        "true_label": "experience",
+        "predicted_label": "summary",
+        "baseline_label": "summary"
+      }
+    ]
+  },
+  "skill_extraction": {
+    "evaluation_samples": 8,
+    "definition_of_correct_match": "Exact canonical taxonomy skill name match on annotated test sentences.",
+    "precision": 1.0,
+    "recall": 0.9655,
+    "f1_score": 0.9825,
+    "total_true_positives": 28,
+    "total_false_positives": 0,
+    "total_false_negatives": 1,
+    "sample_false_positives": [],
+    "sample_false_negatives": [
+      {
+        "text": "Fine-tuned BERT transformers using PyTorch and Hugging Face for token classification with spaCy.",
+        "false_negative": "Natural Language Processing"
+      }
+    ]
+  },
+  "matching_models": {
+    "evaluation_pairs_count": 12,
+    "evaluation_query_groups": 6,
+    "evaluation_description": "Paired test samples with human-reviewed relevance scores (0-3). Evaluates retrieval ranking and score correlation.",
+    "lexical_tfidf": {
+      "model_description": "TF-IDF (1-2 n-grams) Cosine Similarity",
+      "spearman_correlation_with_relevance": 0.8932,
+      "precision_at_1": 1.0
+    },
+    "semantic_embeddings": {
+      "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+      "license": "Apache-2.0",
+      "is_available": true,
+      "spearman_correlation_with_relevance": 0.887,
+      "precision_at_1": 1.0
+    },
+    "limitations_note": "Evaluated on a small, controlled 12-pair benchmark. These metrics reflect document similarity ranking, not hiring predictive validity."
+  }
+}

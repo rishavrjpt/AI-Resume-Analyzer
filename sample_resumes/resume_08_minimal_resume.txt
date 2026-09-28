@@ -1,0 +1,10 @@
+TAYLOR BROOKS
+Austin, TX | taylor.brooks@example.local
+
+WORK EXPERIENCE
+Junior Python Developer | Local Tech Hub | 2023 - Present
+Helped build internal data entry tools using Python and SQLite. Fixed bug tickets and assisted with database maintenance.
+Wrote simple unit tests. Worked with Git for version control.
+
+SKILLS
+Python, SQLite, Git, HTML, Linux

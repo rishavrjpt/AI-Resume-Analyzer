@@ -1,0 +1,36 @@
+PRIYA PATEL
+Dallas, TX | priya.patel@example.local | (555) 010-0006 | linkedin.com/in/example-priyapatel
+
+PROFESSIONAL SUMMARY
+Cybersecurity analyst trainee with practical experience in network vulnerability scanning, threat monitoring, SIEM log analysis, and incident response fundamentals.
+
+CERTIFICATIONS
+- CompTIA Security+ (SY0-601) - Certified October 2023
+- Cisco Certified Support Technician (CCST) Cybersecurity - May 2023
+- AWS Certified Cloud Practitioner - January 2024
+
+TECHNICAL SKILLS
+Security Tools: Wireshark, Nmap, Nessus, Splunk, Metasploit, Burp Suite
+Operating Systems: Linux (Ubuntu, Kali Linux), Windows Server
+Networking: TCP/IP, DNS, VPN, Firewalls, Subnetting, IDS/IPS (Snort)
+Scripting & Automation: Python, Bash, PowerShell
+
+EXPERIENCE
+Information Security Intern | ShieldGate Defense | June 2023 - Present
+- Monitored security alerts in Splunk SIEM across 350 endpoints, triaging potential phishing and brute-force events.
+- Conducted internal vulnerability assessments using Nessus, documenting 14 high-severity CVEs for remediation.
+- Configured firewall rule policies and analyzed packet captures using Wireshark to investigate anomalous egress traffic.
+- Authored 5 standard operating procedure (SOP) playbooks for common phishing containment scenarios.
+
+IT Support Specialist | Lone Star College Helpdesk | August 2021 - May 2023
+- Resolved 25+ daily desktop support tickets involving active directory account permissions and MFA setup.
+- Enforced endpoint antivirus compliance across 200 campus laboratory workstations.
+
+EDUCATION
+Associate of Applied Science in Cybersecurity
+Dallas College, Graduated May 2023 | Dean's Honor Roll
+
+HANDS-ON LAB PROJECTS
+Defensive Home Lab Infrastructure
+- Configured a virtualized enterprise lab running pfSense firewall, Security Onion IDS, and Active Directory domain controller.
+- Simulated credential dumping attacks and verified detection rules in Splunk.

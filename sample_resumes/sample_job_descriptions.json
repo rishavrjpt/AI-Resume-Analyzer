@@ -1,0 +1,22 @@
+[
+  {
+    "id": "jd_backend_engineer",
+    "title": "Senior Backend Engineer (Python / Go / AWS)",
+    "description": "We are seeking a Backend Engineer with 3+ years of experience in Python and Go to build high-scale microservices. Requirements:\n- Strong proficiency with Python, FastAPI, or Django.\n- Experience designing relational schemas in PostgreSQL and in-memory caches like Redis.\n- Hands-on experience with Docker, Kubernetes, and AWS cloud services (EC2, S3, RDS).\n- Familiarity with CI/CD pipelines, automated testing with pytest, and RESTful API architecture.\n- Experience with distributed streaming systems such as Apache Kafka or RabbitMQ is a strong plus."
+  },
+  {
+    "id": "jd_data_analyst",
+    "title": "Data Analyst (SQL / BI / Product Analytics)",
+    "description": "Acme Corp is hiring a Data Analyst to join our Product Analytics team. In this role, you will:\n- Write advanced SQL queries across Snowflake and BigQuery data warehouses.\n- Build interactive dashboards in Tableau and Power BI for executive leadership.\n- Conduct A/B testing and statistical analysis using Python (Pandas, NumPy, Scipy) or R.\n- Partner with cross-functional stakeholders to define KPIs and analyze customer retention and churn."
+  },
+  {
+    "id": "jd_ml_engineer",
+    "title": "Machine Learning Engineer (NLP / PyTorch / Transformers)",
+    "description": "Join our AI research and applied engineering team. Requirements:\n- M.S. or B.S. in Computer Science or related quantitative field.\n- Proven expertise in PyTorch or TensorFlow, Hugging Face Transformers, and NLP libraries (spaCy, NLTK).\n- Experience training, fine-tuning, and evaluating transformer models on text classification and entity recognition tasks.\n- Practical knowledge of Docker containerization and model deployment pipelines.\n- Solid understanding of ML evaluation metrics, loss functions, and dataset curation."
+  },
+  {
+    "id": "jd_frontend_developer",
+    "title": "Frontend Engineer (React / TypeScript / Next.js)",
+    "description": "We are looking for a passionate Frontend Engineer to craft fast and accessible web apps. Key responsibilities:\n- Build web interfaces using React, TypeScript, Next.js, and modern CSS frameworks like Tailwind CSS.\n- Maintain and evolve component design systems with an emphasis on WCAG accessibility compliance.\n- Write comprehensive client-side unit and integration tests using Jest and Cypress.\n- Work closely with backend teams on REST and GraphQL API integrations."
+  }
+]

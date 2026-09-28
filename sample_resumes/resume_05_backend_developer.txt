@@ -1,0 +1,30 @@
+MARCUS VANCE
+Denver, CO | marcus.vance@example.local | (555) 010-0005 | github.com/example/marcusvance
+
+PROFILE
+Backend Software Engineer focusing on microservice architectures, event-driven systems, and relational database optimization. 6 years of industry experience designing resilient back-end services.
+
+PROFESSIONAL EXPERIENCE
+Senior Backend Engineer | Apex Logistics Platform | March 2021 - Present
+- Built real-time package tracking microservices using Go, gRPC, and Apache Kafka handling 50,000 events/second.
+- Designed database schemas in PostgreSQL and implemented caching layers using Redis clusters to minimize read contention.
+- Provisioned cloud infrastructure on Google Cloud Platform (GCP) using Kubernetes and Terraform for automated continuous deployment.
+- Wrote end-to-end integration tests using Docker Compose and established CI/CD pipelines via GitLab CI.
+
+Backend Engineer | Summit Financial Systems | June 2018 - February 2021
+- Developed payment processing APIs in Java using Spring Boot and Hibernate ORM.
+- Managed event-driven transactional workflows using RabbitMQ and MySQL databases.
+- Automated API regression testing with JUnit, Mockito, and Postman collections.
+- Collaborated with security teams to implement OAuth2 and JWT authorization schemes across all internal endpoints.
+
+PROJECTS
+Event-Driven Order Processing Engine
+- Built a fault-tolerant order pipeline using Python, FastAPI, and Apache Pulsar.
+- Persisted operational states into MongoDB and published analytics feeds into Elasticsearch.
+
+Distributed Rate Limiter
+- Implemented sliding-window counter rate limiting in Go backed by Redis Lua scripts to protect downstream services.
+
+EDUCATION
+Bachelor of Science in Information Systems
+Colorado State University, 2018

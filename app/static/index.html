@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumeLens AI — NLP Resume & Job Description Analyzer</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            <path d="M11 8v6M8 11h6"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">ResumeLens <span class="brand-badge">AI</span></span>
+          <span class="brand-subtitle">NLP Resume & Job Description Reviewer</span>
+        </div>
+      </div>
+
+      <nav class="nav-tabs" role="tablist">
+        <button class="nav-tab active" data-tab="analyze" role="tab" aria-selected="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Analyze Resume
+        </button>
+        <button class="nav-tab" data-tab="dashboard" role="tab" aria-selected="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          ML Testing Dashboard
+        </button>
+        <button class="nav-tab" data-tab="insights" role="tab" aria-selected="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          ML Insights
+        </button>
+        <button class="nav-tab" data-tab="about" role="tab" aria-selected="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          About
+        </button>
+      </nav>
+
+      <div class="system-status-pill" id="systemStatusPill" title="System operational status">
+        <span class="status-dot"></span>
+        <span class="status-text">Checking API...</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-main">
+    <!-- Notice Banner -->
+    <div class="responsible-notice-banner">
+      <div class="notice-icon">ℹ️</div>
+      <div class="notice-body">
+        <strong>Personal Resume Review Tool:</strong> ResumeLens AI provides text and skill comparisons to help candidates review their resumes against job descriptions. It does <em>not</em> score hireability, predict ATS outcomes, or rank applicants.
+      </div>
+    </div>
+
+    <!-- TAB 1: ANALYZE RESUME -->
+    <section id="tab-analyze" class="tab-content active" role="tabpanel">
+      <div class="analyzer-grid">
+        <!-- Input Column -->
+        <div class="card input-card">
+          <h2 class="card-title">1. Upload Resume & Job Description</h2>
+          <p class="card-desc">Supported formats: PDF, DOCX, TXT (Max 5MB). Processed strictly in memory.</p>
+
+          <form id="analyzeForm">
+            <!-- Upload Box -->
+            <div class="upload-dropzone" id="dropzone">
+              <input type="file" id="resumeFileInput" accept=".pdf,.docx,.txt" style="display:none;">
+              <div class="dropzone-content">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <p class="dropzone-text"><strong>Click to select a file</strong> or drag and drop</p>
+                <span class="dropzone-hint">PDF, DOCX, or TXT file</span>
+              </div>
+              <div class="file-selected-badge" id="fileSelectedBadge" style="display:none;">
+                <span class="file-name" id="selectedFileName">resume.pdf</span>
+                <button type="button" class="btn-remove-file" id="btnRemoveFile" title="Remove file">&times;</button>
+              </div>
+            </div>
+
+            <!-- Job Description Input -->
+            <div class="form-group" style="margin-top: 1.25rem;">
+              <div class="form-header-row">
+                <label for="jobDescriptionInput" class="form-label">Job Description (Optional for comparison)</label>
+                <button type="button" class="btn-text-link" id="btnLoadSampleJob">Load Sample JD</button>
+              </div>
+              <textarea id="jobDescriptionInput" class="form-textarea" rows="6" placeholder="Paste the job description or role requirements here to compare skills and estimate text alignment..."></textarea>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="btnAnalyze">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                Analyze Document
+              </button>
+              <button type="button" class="btn btn-secondary" id="btnClear">Clear</button>
+            </div>
+          </form>
+
+          <!-- Friendly Error Banner -->
+          <div class="alert-error" id="analyzeError" style="display:none;"></div>
+        </div>
+
+        <!-- Output Column -->
+        <div class="card output-card" id="outputCard">
+          <!-- Initial Placeholder -->
+          <div class="empty-state" id="emptyStatePlaceholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            <h3>Ready for Analysis</h3>
+            <p>Select your resume document on the left and click <strong>Analyze Document</strong> to view extracted sections, skills, wording alignment, and grounded suggestions.</p>
+          </div>
+
+          <!-- Loading State -->
+          <div class="loading-state" id="loadingState" style="display:none;">
+            <div class="spinner"></div>
+            <h3 id="loadingStatusText">Parsing document and running NLP pipeline...</h3>
+            <p class="loading-subtext">Executing text extraction, hybrid section detection, skill span taxonomy matching, and similarity estimation.</p>
+          </div>
+
+          <!-- Analysis Results View -->
+          <div class="analysis-results" id="analysisResults" style="display:none;">
+            <!-- Top Metric Tiles -->
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <span class="metric-label">Document Stats</span>
+                <span class="metric-value" id="resDocStats">0 words</span>
+                <span class="metric-sub" id="resDocType">PDF</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Sections Detected</span>
+                <span class="metric-value" id="resSectionsCount">0 / 6</span>
+                <span class="metric-sub" id="resSectionMethod">Hybrid NLP</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Skills Identified</span>
+                <span class="metric-value" id="resSkillsCount">0</span>
+                <span class="metric-sub" id="resCandidateTerms">0 candidate terms</span>
+              </div>
+              <div class="metric-card highlight-metric">
+                <span class="metric-label">Text Similarity Estimate</span>
+                <div class="similarity-scores-row">
+                  <div class="sim-chip">
+                    <span class="sim-title">Lexical (TF-IDF):</span>
+                    <span class="sim-num" id="resLexicalSim">—</span>
+                  </div>
+                  <div class="sim-chip">
+                    <span class="sim-title">Semantic (Dense):</span>
+                    <span class="sim-num" id="resSemanticSim">—</span>
+                  </div>
+                </div>
+                <span class="similarity-disclaimer-note">Wording & embedding comparison only. Not a hiring probability.</span>
+              </div>
+            </div>
+
+            <!-- Results Sub-Tabs -->
+            <div class="sub-nav-tabs">
+              <button class="sub-tab active" data-subtab="comparison">Job Comparison</button>
+              <button class="sub-tab" data-subtab="feedback">Grounded Feedback</button>
+              <button class="sub-tab" data-subtab="sections">Extracted Sections</button>
+              <button class="sub-tab" data-subtab="skills">Skill Taxonomy Details</button>
+              <button class="sub-tab" data-subtab="preview">Text Preview</button>
+            </div>
+
+            <!-- Subtab Content: Comparison -->
+            <div id="subtab-comparison" class="subtab-pane active">
+              <div id="noComparisonMessage" class="info-banner" style="display:none;">
+                Paste a job description in the form to see detailed skill comparisons, missing term prompts, and similarity metrics.
+              </div>
+              <div id="comparisonContent">
+                <div class="explanation-box" id="comparisonExplanation"></div>
+
+                <div class="comparison-columns">
+                  <div class="comp-col col-matching">
+                    <div class="comp-col-header">
+                      <span class="comp-badge badge-green">Matching Terms (<span id="countMatching">0</span>)</span>
+                      <small>Found in both documents</small>
+                    </div>
+                    <div class="tag-cloud" id="matchingTermsCloud"></div>
+                  </div>
+
+                  <div class="comp-col col-missing">
+                    <div class="comp-col-header">
+                      <span class="comp-badge badge-amber">Review Prompts (<span id="countNotFound">0</span>)</span>
+                      <small>In job description, not found in resume text</small>
+                    </div>
+                    <div class="tag-cloud" id="notFoundTermsCloud"></div>
+                  </div>
+
+                  <div class="comp-col col-additional">
+                    <div class="comp-col-header">
+                      <span class="comp-badge badge-blue">Additional Resume Skills (<span id="countAdditional">0</span>)</span>
+                      <small>In resume text, not requested in job description</small>
+                    </div>
+                    <div class="tag-cloud" id="additionalTermsCloud"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Subtab Content: Feedback -->
+            <div id="subtab-feedback" class="subtab-pane">
+              <div class="feedback-header">
+                <h3>Evidence-Grounded Writing Suggestions</h3>
+                <p>Suggestions are tied directly to extracted resume lines. Rewrites use placeholders (e.g. <code>[add a measured result]</code>) to avoid inventing qualifications or numbers.</p>
+              </div>
+              <div class="feedback-list" id="feedbackList"></div>
+            </div>
+
+            <!-- Subtab Content: Sections -->
+            <div id="subtab-sections" class="subtab-pane">
+              <div class="sections-container" id="sectionsContainer"></div>
+            </div>
+
+            <!-- Subtab Content: Skills -->
+            <div id="subtab-skills" class="subtab-pane">
+              <div class="skills-taxonomy-view" id="skillsTaxonomyView"></div>
+            </div>
+
+            <!-- Subtab Content: Preview -->
+            <div id="subtab-preview" class="subtab-pane">
+              <pre class="code-preview" id="rawTextPreview"></pre>
+            </div>
+
+            <!-- Export Bar -->
+            <div class="results-export-bar">
+              <button class="btn btn-secondary btn-sm" id="btnCopyFeedback">Copy Feedback</button>
+              <button class="btn btn-secondary btn-sm" id="btnDownloadReport">Download Text Report</button>
+              <button class="btn btn-secondary btn-sm" id="btnDownloadJson">Download Full JSON</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: ML TESTING DASHBOARD -->
+    <section id="tab-dashboard" class="tab-content" role="tabpanel">
+      <!-- Overview Diagnostic Cards -->
+      <div class="dashboard-overview-grid" id="dashOverviewGrid">
+        <div class="stat-card">
+          <span class="stat-title">API Status</span>
+          <span class="stat-value text-green" id="statApiStatus">Checking...</span>
+          <span class="stat-meta" id="statApiVersion">Version 1.0.0</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-title">Model Name & Type</span>
+          <span class="stat-value" id="statModelName">Section-Classifier</span>
+          <span class="stat-meta" id="statModelType">TF-IDF + Logistic Regression</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-title">Training Status</span>
+          <span class="stat-value text-green" id="statTrainingStatus">Completed</span>
+          <span class="stat-meta" id="statTrainSamples">164 lines across 11 docs</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-title">Evaluation Status</span>
+          <span class="stat-value text-green" id="statEvalStatus">Completed</span>
+          <span class="stat-meta" id="statEvalMetrics">Macro F1: 0.8215 (+0.40 vs baseline)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-title">Synthetic Test Fixtures</span>
+          <span class="stat-value" id="statTestSamplesCount">8 Resumes</span>
+          <span class="stat-meta">Local regression fixtures</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-title">Semantic Model</span>
+          <span class="stat-value text-purple" id="statSemanticModel">all-MiniLM-L6-v2</span>
+          <span class="stat-meta">Apache-2.0 Dense Embeddings</span>
+        </div>
+      </div>
+
+      <!-- Test Control Panel -->
+      <div class="card test-controls-card">
+        <div class="card-header-row">
+          <div>
+            <h2 class="card-title">Synthetic Resumes Functional Testing Suite</h2>
+            <p class="card-desc">Execute backend integration tests against the 8 hand-authored synthetic resumes. Test cases evaluate section detection, edge-case parsing, and skill extraction.</p>
+          </div>
+          <div class="button-group">
+            <button class="btn btn-primary" id="btnRunSelectedTests">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Run Test on Selected
+            </button>
+            <button class="btn btn-secondary" id="btnResetTestResults">Reset Display</button>
+          </div>
+        </div>
+
+        <!-- Job Selection for Testing -->
+        <div class="test-config-row">
+          <div class="config-col">
+            <label class="form-label" for="testJobSelect">Select Test Job Description:</label>
+            <select id="testJobSelect" class="form-select">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+          <div class="config-col-actions">
+            <button type="button" class="btn btn-secondary btn-sm" id="btnSelectAllTests">Select All (8)</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="btnDeselectAllTests">Deselect All</button>
+          </div>
+        </div>
+
+        <!-- Sample Resumes Selection Table -->
+        <div class="sample-resumes-grid" id="sampleResumesGrid">
+          <!-- Dynamically populated from /api/test-samples -->
+        </div>
+      </div>
+
+      <!-- Live Test Results Section -->
+      <div class="card test-results-card" id="testResultsCard" style="margin-top: 1.5rem;">
+        <div class="card-header-row">
+          <div>
+            <h3 class="card-title">Functional Test Execution Results</h3>
+            <p class="card-desc" id="testRunMeta">No test runs executed yet in this session.</p>
+          </div>
+          <div class="button-group" id="testExportButtons" style="display:none;">
+            <button class="btn btn-secondary btn-sm" id="btnExportTestJson">Export JSON</button>
+            <button class="btn btn-secondary btn-sm" id="btnExportTestCsv">Export CSV</button>
+          </div>
+        </div>
+
+        <!-- Results Table -->
+        <div class="table-responsive">
+          <table class="data-table" id="testResultsTable">
+            <thead>
+              <tr>
+                <th>Sample Filename</th>
+                <th>Parsing</th>
+                <th>Sections</th>
+                <th>Skills</th>
+                <th>Matched JD Terms</th>
+                <th>Not Found Terms</th>
+                <th>Analysis Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="testResultsTableBody">
+              <tr>
+                <td colspan="8" class="text-center text-muted">Select synthetic resumes above and click <strong>Run Test on Selected</strong>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Diagnostic Summary Mini Charts -->
+        <div class="diagnostic-summary-row" id="diagSummaryRow" style="display:none;">
+          <div class="diag-tile">
+            <span class="diag-label">Test Runs Passed / Total</span>
+            <div class="diag-bar-track">
+              <div class="diag-bar-fill" id="diagPassBar" style="width: 100%;"></div>
+            </div>
+            <span class="diag-val" id="diagPassText">8 / 8 (100%)</span>
+          </div>
+          <div class="diag-tile">
+            <span class="diag-label">Average Sections Identified</span>
+            <span class="diag-stat" id="diagAvgSections">5.2</span>
+          </div>
+          <div class="diag-tile">
+            <span class="diag-label">Average Skills Extracted</span>
+            <span class="diag-stat" id="diagAvgSkills">8.6</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: ML INSIGHTS -->
+    <section id="tab-insights" class="tab-content" role="tabpanel">
+      <div class="card">
+        <h2 class="card-title">NLP Architecture & Experimental Evaluation</h2>
+        <p class="card-desc">All metrics and tables below reflect actual empirical runs on strictly held-out test splits without data leakage. No metrics are fabricated or assumed.</p>
+
+        <!-- Pipeline Diagram -->
+        <div class="workflow-diagram">
+          <div class="wf-node">
+            <span class="wf-step">Step 1</span>
+            <strong>Document Parser</strong>
+            <small>pypdf & python-docx in-memory stream</small>
+          </div>
+          <div class="wf-arrow">→</div>
+          <div class="wf-node">
+            <span class="wf-step">Step 2</span>
+            <strong>Section Detector</strong>
+            <small>Rule heuristics + TF-IDF Logistic Regression</small>
+          </div>
+          <div class="wf-arrow">→</div>
+          <div class="wf-node">
+            <span class="wf-step">Step 3</span>
+            <strong>Skill Extractor</strong>
+            <small>Boundary-aware taxonomy + candidate phrases</small>
+          </div>
+          <div class="wf-arrow">→</div>
+          <div class="wf-node">
+            <span class="wf-step">Step 4</span>
+            <strong>Document Matcher</strong>
+            <small>TF-IDF cosine & MiniLM sentence embeddings</small>
+          </div>
+          <div class="wf-arrow">→</div>
+          <div class="wf-node">
+            <span class="wf-step">Step 5</span>
+            <strong>Feedback Generator</strong>
+            <small>Evidence-grounded template rewrites</small>
+          </div>
+        </div>
+
+        <!-- Section Classification Evaluation -->
+        <div class="insights-section">
+          <h3>1. Section Classification: Baseline vs. Trained ML Model</h3>
+          <p class="text-muted">Evaluated on the held-out test split (51 labeled sentences across completely isolated documents).</p>
+
+          <div class="table-responsive">
+            <table class="data-table" id="sectionModelCompTable">
+              <thead>
+                <tr>
+                  <th>Model / Approach</th>
+                  <th>Type</th>
+                  <th>Macro F1</th>
+                  <th>Weighted F1</th>
+                  <th>Delta vs. Baseline</th>
+                </tr>
+              </thead>
+              <tbody id="sectionModelCompBody">
+                <!-- Dynamically populated from /api/insights -->
+              </tbody>
+            </table>
+          </div>
+
+          <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Per-Class Evaluation (ML Model)</h4>
+          <div class="table-responsive">
+            <table class="data-table" id="perClassTable">
+              <thead>
+                <tr>
+                  <th>Section Class</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                  <th>F1-Score</th>
+                  <th>Support (Test Instances)</th>
+                </tr>
+              </thead>
+              <tbody id="perClassTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Skill Extraction Evaluation -->
+        <div class="insights-section" style="margin-top: 2rem;">
+          <h3>2. Skill & Term Extraction Evaluation</h3>
+          <p class="text-muted">Evaluated against 8 annotated ground-truth test snippets containing multi-word skills and aliases.</p>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-label">Precision</span>
+              <span class="metric-value text-green" id="skillEvalPrecision">—</span>
+              <span class="metric-sub">Exact canonical match</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Recall</span>
+              <span class="metric-value text-green" id="skillEvalRecall">—</span>
+              <span class="metric-sub">Coverage of labeled skills</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">F1-Score</span>
+              <span class="metric-value text-purple" id="skillEvalF1">—</span>
+              <span class="metric-sub">Harmonic mean</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Confusion Counts</span>
+              <span class="metric-value" id="skillConfusionCounts">—</span>
+              <span class="metric-sub">TP / FP / FN</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Matching Models Evaluation -->
+        <div class="insights-section" style="margin-top: 2rem;">
+          <h3>3. Resume-to-Job Matching Evaluation</h3>
+          <p class="text-muted">Evaluated on 12 human-reviewed resume-job pairs with relevance grades (0 to 3) measuring ranking consistency.</p>
+
+          <div class="table-responsive">
+            <table class="data-table" id="matchingModelsTable">
+              <thead>
+                <tr>
+                  <th>Matching Method</th>
+                  <th>Model Architecture</th>
+                  <th>Spearman Rank Correlation</th>
+                  <th>Top-1 Retrieval Precision</th>
+                  <th>Role & Behavior</th>
+                </tr>
+              </thead>
+              <tbody id="matchingModelsBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Known Limitations & Ethical Discussion -->
+        <div class="insights-section" style="margin-top: 2rem;">
+          <h3>4. Known Limitations & Error Analysis</h3>
+          <div class="limitations-grid">
+            <div class="limitation-box">
+              <strong>Header Formatting Ambiguity:</strong>
+              <p>Resumes with combined headers (e.g., "Education & Certifications") or non-standard visual layouts can cause lines to be assigned to the dominant classification class or left in unclassified ("other").</p>
+            </div>
+            <div class="limitation-box">
+              <strong>Taxonomy Coverage:</strong>
+              <p>Dictionary-based skill extraction relies on curated terms in <code>skills.json</code>. Proprietary internal tools or brand-new frameworks may be flagged as candidate acronyms rather than verified skills.</p>
+            </div>
+            <div class="limitation-box">
+              <strong>Semantic Similarity Disclaimers:</strong>
+              <p>Sentence embedding cosine similarity measures semantic proximity in a latent text vector space. It cannot and should not be used as an ATS score or an indicator of candidate hireability.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: ABOUT -->
+    <section id="tab-about" class="tab-content" role="tabpanel">
+      <div class="card">
+        <h2 class="card-title">About ResumeLens AI</h2>
+        <div class="about-grid">
+          <div class="about-main">
+            <h3>Problem Statement & Purpose</h3>
+            <p>
+              Job seekers frequently struggle to evaluate whether their resumes clearly communicate their technical qualifications against job descriptions. Commercial tools often provide opaque, gamified "ATS pass scores" or candidate rankings that promote keyword stuffing while providing little pedagogical value.
+            </p>
+            <p>
+              <strong>ResumeLens AI</strong> is designed as a personal resume review assistant. It operates transparently to help candidates inspect how natural language processing components parse their documents, identify technical skills, compare vocabulary against a target job posting, and receive actionable, evidence-grounded feedback tied to their own words.
+            </p>
+
+            <h3 style="margin-top: 1.5rem;">Ethical & Privacy Principles</h3>
+            <ul class="principles-list">
+              <li><strong>No Candidate Ranking or Scoring:</strong> We never generate a "hireability score" or predict whether someone should be hired.</li>
+              <li><strong>Local & Ephemeral Processing:</strong> Uploaded resumes are parsed in memory and never stored permanently or logged to disk.</li>
+              <li><strong>No Demographic Inference:</strong> We do not infer age, gender, race, ethnicity, or disability.</li>
+              <li><strong>No Fabricated Achievements:</strong> Suggestions point out areas where metrics or action verbs could improve clarity, but rewrites use placeholders rather than inventing facts.</li>
+              <li><strong>Honest Absence Labeling:</strong> Missing keywords are reported strictly as "not found in provided resume text", never as proof of candidate inability.</li>
+            </ul>
+
+            <h3 style="margin-top: 1.5rem;">Technology Stack</h3>
+            <div class="tech-pills">
+              <span class="tech-pill">FastAPI</span>
+              <span class="tech-pill">Python 3.11</span>
+              <span class="tech-pill">scikit-learn</span>
+              <span class="tech-pill">sentence-transformers (all-MiniLM-L6-v2)</span>
+              <span class="tech-pill">pypdf & python-docx</span>
+              <span class="tech-pill">Pandas & NumPy</span>
+              <span class="tech-pill">Vanilla HTML5/CSS3/ES6</span>
+            </div>
+          </div>
+
+          <div class="about-sidebar">
+            <div class="sidebar-box">
+              <h4>Resume-Ready Project Description</h4>
+              <p class="text-muted" style="font-size: 0.85rem;">You can use the following concise bullets for your portfolio or CV:</p>
+              <div class="code-snippet">
+                <strong>ResumeLens AI — NLP-Based Resume Analysis and Job Description Comparison</strong>
+                <ul>
+                  <li>Architected a modular Python NLP pipeline for resume document parsing, hybrid section detection (0.8215 Macro F1 vs 0.4181 baseline), and dictionary-based skill span extraction (0.9825 F1).</li>
+                  <li>Integrated lexical TF-IDF and dense sentence transformer embeddings (all-MiniLM-L6-v2) to evaluate document vocabulary overlap with 0.89 Spearman correlation against human-annotated pairs.</li>
+                  <li>Engineered a privacy-first FastAPI web service and testing dashboard featuring 8 synthetic test fixtures and evidence-grounded feedback without candidate ranking or PII retention.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sample Detail Modal -->
+  <div class="modal-backdrop" id="sampleDetailModal" style="display:none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">Sample Resume Test Details</h3>
+        <button type="button" class="btn-close-modal" id="btnCloseModal">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btnCloseModalFooter">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <div class="footer-container">
+      <span>ResumeLens AI — Responsible NLP Portfolio Demo</span>
+      <span>•</span>
+      <a href="/docs" target="_blank" rel="noopener">Interactive OpenAPI / Swagger Docs</a>
+    </div>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

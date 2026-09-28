@@ -1,0 +1,78 @@
+{
+  "test_suite_description": "Expected behavior definitions for local functional testing of synthetic resumes. These are regression and integration test fixtures, NOT a model evaluation benchmark.",
+  "disclaimer": "These expected test cases must not be used to claim ML benchmark accuracy. They verify software parsing, section extraction, and skill presence.",
+  "cases": [
+    {
+      "filename": "resume_01_software_engineer.txt",
+      "persona": "Standard Software Engineer",
+      "expected_success": true,
+      "edge_case_tested": "Standard canonical headings and clear separation of sections.",
+      "expected_sections": ["summary", "skills", "experience", "education", "projects"],
+      "minimum_required_skills": ["python", "fastapi", "postgresql", "docker", "redis", "aws"],
+      "expected_missing_sections": []
+    },
+    {
+      "filename": "resume_02_data_analyst.txt",
+      "persona": "Data Analyst (Reverse Section Order)",
+      "expected_success": true,
+      "edge_case_tested": "Non-standard section ordering with Education first, followed by Skills & Competencies, Professional Experience, and Key Projects.",
+      "expected_sections": ["education", "skills", "experience", "projects"],
+      "minimum_required_skills": ["sql", "python", "pandas", "tableau", "bigquery"],
+      "expected_missing_sections": ["summary"]
+    },
+    {
+      "filename": "resume_03_ml_intern.txt",
+      "persona": "ML Intern (Academic Focus)",
+      "expected_success": true,
+      "edge_case_tested": "Objective statement, Coursework section, and academic lab research alongside industry internship.",
+      "expected_sections": ["summary", "education", "skills", "projects", "experience"],
+      "minimum_required_skills": ["pytorch", "nlp", "python", "transformers", "docker"],
+      "expected_missing_sections": []
+    },
+    {
+      "filename": "resume_04_frontend_developer.txt",
+      "persona": "Frontend Developer (Modern Tech Stack)",
+      "expected_success": true,
+      "edge_case_tested": "Special character headings ('Core Skills', 'Work History', 'Featured Projects') and detailed frontend terminology.",
+      "expected_sections": ["summary", "skills", "experience", "education", "projects"],
+      "minimum_required_skills": ["react", "typescript", "javascript", "next.js", "tailwind css", "graphql"],
+      "expected_missing_sections": []
+    },
+    {
+      "filename": "resume_05_backend_developer.txt",
+      "persona": "Backend Developer (Embedded Skills)",
+      "expected_success": true,
+      "edge_case_tested": "No dedicated Skills heading; skills are mentioned exclusively inside experience and project descriptions.",
+      "expected_sections": ["summary", "experience", "projects", "education"],
+      "minimum_required_skills": ["go", "kafka", "postgresql", "redis", "kubernetes", "fastapi"],
+      "expected_missing_sections": ["skills"]
+    },
+    {
+      "filename": "resume_06_cybersecurity_trainee.txt",
+      "persona": "Cybersecurity Trainee (Certifications Focus)",
+      "expected_success": true,
+      "edge_case_tested": "Certifications section placed before skills and experience; lab project heading variations.",
+      "expected_sections": ["summary", "certifications", "skills", "experience", "education", "projects"],
+      "minimum_required_skills": ["wireshark", "splunk", "linux", "python", "bash"],
+      "expected_missing_sections": []
+    },
+    {
+      "filename": "resume_07_project_manager.txt",
+      "persona": "Technical Project Manager (Varied Bullet Styles)",
+      "expected_success": true,
+      "edge_case_tested": "Executive summary heading, varied bullet styles (asterisks, dashes), methodology and management keywords.",
+      "expected_sections": ["summary", "skills", "experience", "certifications", "education"],
+      "minimum_required_skills": ["agile", "scrum", "jira", "sql", "kanban"],
+      "expected_missing_sections": ["projects"]
+    },
+    {
+      "filename": "resume_08_minimal_resume.txt",
+      "persona": "Minimal / Sparse Resume",
+      "expected_success": true,
+      "edge_case_tested": "Extremely sparse content lacking Education, Projects, Certifications, and Summary sections.",
+      "expected_sections": ["experience", "skills"],
+      "minimum_required_skills": ["python", "git", "linux", "sqlite"],
+      "expected_missing_sections": ["education", "projects", "summary", "certifications"]
+    }
+  ]
+}

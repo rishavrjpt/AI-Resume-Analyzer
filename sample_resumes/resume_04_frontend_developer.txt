@@ -1,0 +1,32 @@
+LIAM O'CONNOR
+Austin, TX | liam.oconnor@example.local | (555) 010-0004 | liamdev.example.local
+
+PROFESSIONAL SUMMARY
+Frontend Engineer with 5+ years of experience crafting accessible, responsive, and performant web applications. Specialized in modern JavaScript/TypeScript, React ecosystems, design systems, and frontend performance optimization.
+
+CORE SKILLS
+- Web Technologies: JavaScript (ES6+), TypeScript, HTML5, CSS3, SCSS
+- Frameworks & Libraries: React, Next.js, Vue.js, Redux Toolkit, Tailwind CSS, Material-UI
+- Tooling & Testing: Webpack, Vite, Jest, Cypress, React Testing Library, ESLint, Prettier
+- Protocols & APIs: REST, GraphQL, WebSocket, Web Workers
+
+WORK HISTORY
+Lead Frontend Developer | PixelCraft Media | Jan 2022 - Present
+- Architected enterprise design system used across 8 production applications, reducing component duplication by 45%.
+- Migrated legacy single-page application from Create React App to Next.js 14, improving Core Web Vitals (LCP improved by 1.8s).
+- Mentored 4 junior engineers on accessible web development (WCAG 2.1 AA compliance) and component testing strategies.
+- Implemented state management using Redux Toolkit and normalized query caching with RTK Query.
+
+Frontend Developer | Kinetic Interactive | Feb 2019 - Dec 2021
+- Developed interactive customer onboarding workflows using React, TypeScript, and Tailwind CSS.
+- Authored comprehensive test suites in Jest and Cypress, maintaining 92% statement coverage.
+- Integrated GraphQL endpoints using Apollo Client for complex client-side querying.
+
+EDUCATION
+Bachelor of Fine Arts in Digital Media Design
+University of Texas at Austin, 2018
+
+FEATURED PROJECTS
+Accessible UI Component Library
+- Authored a fully headless, ARIA-compliant React component library with keyboard navigation support.
+- Published documentation site built with Storybook and automated visual regression testing with Chromatic.

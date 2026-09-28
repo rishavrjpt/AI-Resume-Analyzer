@@ -1,0 +1,38 @@
+ALEX CHEN
+San Francisco, CA | alex.chen@example.local | (555) 010-0001 | github.com/example/alexchen
+
+SUMMARY
+Software Engineer with 4 years of experience building distributed backend systems, RESTful APIs, and cloud-native microservices. Passionate about system reliability, automated testing, and developer productivity.
+
+SKILLS
+Programming Languages: Python, Go, Java, TypeScript
+Frameworks & Libraries: FastAPI, Django, Flask, React, Docker, Kubernetes
+Databases & Storage: PostgreSQL, Redis, MongoDB
+Tools & Cloud: AWS (EC2, S3, RDS), Git, CI/CD (GitHub Actions), Terraform, Linux
+
+EXPERIENCE
+Software Engineer | Acme Cloud Solutions | June 2022 - Present
+- Designed and maintained high-throughput REST APIs using FastAPI and PostgreSQL, serving over 1.2M requests daily.
+- Implemented asynchronous background task processing using Celery and Redis to handle batch data ingestion.
+- Containerized legacy services with Docker and orchestrated deployments on AWS ECS using Terraform scripts.
+- Led migration of relational schema to PostgreSQL 15, reducing average query latency by 32%.
+- Collaborated with front-end engineers to integrate React client interfaces with OpenAPI specifications.
+
+Associate Software Engineer | Beta Technologies | August 2020 - May 2022
+- Developed microservices in Python and Flask to support internal workflow automation.
+- Wrote unit and integration tests using pytest, increasing overall test coverage from 64% to 88%.
+- Built monitoring dashboards using Prometheus and Grafana for real-time alerting on API error rates.
+- Participated in weekly agile sprints, code reviews, and architectural planning discussions.
+
+EDUCATION
+Bachelor of Science in Computer Science
+State University, Graduated May 2020 | GPA: 3.8/4.0
+
+PROJECTS
+OpenAPI Mock Generator
+- Created an open-source CLI tool in Python that generates realistic synthetic JSON responses from OpenAPI schemas.
+- Leveraged Pydantic for validation and deployed documentation via GitHub Pages.
+
+Distributed Task Queue
+- Implemented a lightweight distributed message queue in Go using Raft consensus for leader election.
+- Benchmarked throughput under network partition simulations.

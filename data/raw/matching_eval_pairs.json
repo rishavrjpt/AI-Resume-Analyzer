@@ -1,0 +1,110 @@
+[
+  {
+    "id": "pair_01",
+    "resume_domain": "software_engineering",
+    "job_title": "Backend Engineer (Python / Go / AWS)",
+    "relevance_score": 3,
+    "is_relevant": 1,
+    "resume_sample": "Alex Chen, Software Engineer. Experience with FastAPI, Python, PostgreSQL, Redis, Docker, AWS.",
+    "job_sample": "Seeking Backend Engineer proficient in Python, Go, FastAPI, PostgreSQL, Redis, and AWS cloud."
+  },
+  {
+    "id": "pair_02",
+    "resume_domain": "software_engineering",
+    "job_title": "Data Analyst (SQL / BI / Product Analytics)",
+    "relevance_score": 1,
+    "is_relevant": 0,
+    "resume_sample": "Alex Chen, Software Engineer. Experience with FastAPI, Python, PostgreSQL, Redis, Docker, AWS.",
+    "job_sample": "Hiring Data Analyst with advanced SQL, Tableau, Power BI, and product A/B testing experience."
+  },
+  {
+    "id": "pair_03",
+    "resume_domain": "data_analytics",
+    "job_title": "Data Analyst (SQL / BI / Product Analytics)",
+    "relevance_score": 3,
+    "is_relevant": 1,
+    "resume_sample": "Jordan Taylor, Data Analyst. Experience with SQL, Tableau, BigQuery, dbt, A/B testing, and Pandas.",
+    "job_sample": "Hiring Data Analyst with advanced SQL, Tableau, Power BI, and product A/B testing experience."
+  },
+  {
+    "id": "pair_04",
+    "resume_domain": "data_analytics",
+    "job_title": "Frontend Engineer (React / TypeScript)",
+    "relevance_score": 0,
+    "is_relevant": 0,
+    "resume_sample": "Jordan Taylor, Data Analyst. Experience with SQL, Tableau, BigQuery, dbt, A/B testing, and Pandas.",
+    "job_sample": "Looking for Frontend Engineer with React, TypeScript, Next.js, and CSS design systems."
+  },
+  {
+    "id": "pair_05",
+    "resume_domain": "machine_learning",
+    "job_title": "Machine Learning Engineer (NLP / PyTorch)",
+    "relevance_score": 3,
+    "is_relevant": 1,
+    "resume_sample": "Samira Khan, ML Intern. Research in PyTorch, NLP, BERT transformers, and LoRA fine-tuning.",
+    "job_sample": "Join AI team. Requires PyTorch, Transformers, NLP evaluation, model fine-tuning, and Docker."
+  },
+  {
+    "id": "pair_06",
+    "resume_domain": "machine_learning",
+    "job_title": "Senior Technical Project Manager",
+    "relevance_score": 0,
+    "is_relevant": 0,
+    "resume_sample": "Samira Khan, ML Intern. Research in PyTorch, NLP, BERT transformers, and LoRA fine-tuning.",
+    "job_sample": "Seeking Technical Project Manager with Agile, Scrum, Jira, and enterprise stakeholder alignment."
+  },
+  {
+    "id": "pair_07",
+    "resume_domain": "frontend_engineering",
+    "job_title": "Frontend Engineer (React / TypeScript)",
+    "relevance_score": 3,
+    "is_relevant": 1,
+    "resume_sample": "Liam O'Connor, Frontend Engineer. React, TypeScript, Next.js, Tailwind CSS, Jest, Cypress.",
+    "job_sample": "Looking for Frontend Engineer with React, TypeScript, Next.js, and CSS design systems."
+  },
+  {
+    "id": "pair_08",
+    "resume_domain": "frontend_engineering",
+    "job_title": "Backend Engineer (Python / Go / AWS)",
+    "relevance_score": 1,
+    "is_relevant": 0,
+    "resume_sample": "Liam O'Connor, Frontend Engineer. React, TypeScript, Next.js, Tailwind CSS, Jest, Cypress.",
+    "job_sample": "Seeking Backend Engineer proficient in Python, Go, FastAPI, PostgreSQL, Redis, and AWS cloud."
+  },
+  {
+    "id": "pair_09",
+    "resume_domain": "backend_engineering",
+    "job_title": "Backend Engineer (Python / Go / AWS)",
+    "relevance_score": 3,
+    "is_relevant": 1,
+    "resume_sample": "Marcus Vance, Backend Engineer. Go, gRPC, Apache Kafka, PostgreSQL, Redis, GCP, Kubernetes.",
+    "job_sample": "Seeking Backend Engineer proficient in Python, Go, FastAPI, PostgreSQL, Redis, and AWS cloud."
+  },
+  {
+    "id": "pair_10",
+    "resume_domain": "project_management",
+    "job_title": "Senior Technical Project Manager",
+    "relevance_score": 3,
+    "is_relevant": 1,
+    "resume_sample": "Elena Rostova, Technical Project Manager. Agile, Scrum, Jira, PMP, stakeholder management.",
+    "job_sample": "Seeking Technical Project Manager with Agile, Scrum, Jira, and enterprise stakeholder alignment."
+  },
+  {
+    "id": "pair_11",
+    "resume_domain": "cybersecurity",
+    "job_title": "Cybersecurity Analyst Trainee",
+    "relevance_score": 3,
+    "is_relevant": 1,
+    "resume_sample": "Priya Patel, Cybersecurity Trainee. CompTIA Security+, Splunk, Wireshark, Nessus, Linux.",
+    "job_sample": "Entry-level Cybersecurity Analyst needed for SIEM log monitoring, vulnerability scanning, and Wireshark."
+  },
+  {
+    "id": "pair_12",
+    "resume_domain": "cybersecurity",
+    "job_title": "Data Analyst (SQL / BI / Product Analytics)",
+    "relevance_score": 0,
+    "is_relevant": 0,
+    "resume_sample": "Priya Patel, Cybersecurity Trainee. CompTIA Security+, Splunk, Wireshark, Nessus, Linux.",
+    "job_sample": "Hiring Data Analyst with advanced SQL, Tableau, Power BI, and product A/B testing experience."
+  }
+]

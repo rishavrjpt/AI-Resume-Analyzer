@@ -1,0 +1,52 @@
+document_id,domain,text,label
+doc_01,software_engineering,"ALEX CHEN | [REDACTED_EMAIL] | San Francisco, CA",other
+doc_01,software_engineering,PROFESSIONAL SUMMARY,summary
+doc_01,software_engineering,"Software Engineer with 4 years of experience building distributed backend systems, RESTful APIs, and cloud-native microservices.",summary
+doc_01,software_engineering,"Passionate about system reliability, automated testing, and developer productivity.",summary
+doc_01,software_engineering,TECHNICAL SKILLS,skills
+doc_01,software_engineering,"Programming Languages: Python, Go, Java, TypeScript",skills
+doc_01,software_engineering,"Frameworks: FastAPI, Django, Flask, React, Docker, Kubernetes",skills
+doc_01,software_engineering,"Databases & Cloud: PostgreSQL, Redis, MongoDB, AWS (EC2, S3, RDS)",skills
+doc_01,software_engineering,PROFESSIONAL EXPERIENCE,experience
+doc_01,software_engineering,Software Engineer | Acme Cloud Solutions | June 2022 - Present,experience
+doc_01,software_engineering,"Designed and maintained high-throughput REST APIs using FastAPI and PostgreSQL, serving over 1.2M requests daily.",experience
+doc_01,software_engineering,Implemented asynchronous background task processing using Celery and Redis to handle batch data ingestion.,experience
+doc_01,software_engineering,Containerized legacy services with Docker and orchestrated deployments on AWS ECS using Terraform scripts.,experience
+doc_01,software_engineering,"Led migration of relational schema to PostgreSQL 15, reducing average query latency by 32%.",experience
+doc_01,software_engineering,EDUCATION,education
+doc_01,software_engineering,Bachelor of Science in Computer Science,education
+doc_01,software_engineering,"State University, Graduated May 2020 | GPA: 3.8/4.0",education
+doc_01,software_engineering,PROJECTS,projects
+doc_01,software_engineering,OpenAPI Mock Generator - Created an open-source CLI tool in Python that generates realistic synthetic JSON responses.,projects
+doc_01,software_engineering,Distributed Task Queue - Implemented a lightweight distributed message queue in Go using Raft consensus.,projects
+doc_04,frontend_engineering,"LIAM O'CONNOR | Austin, TX | [REDACTED_EMAIL]",other
+doc_04,frontend_engineering,EXECUTIVE SUMMARY,summary
+doc_04,frontend_engineering,"Frontend Engineer with 5+ years crafting accessible, responsive, and performant web applications in React and TypeScript.",summary
+doc_04,frontend_engineering,CORE SKILLS,skills
+doc_04,frontend_engineering,"Web Technologies: JavaScript (ES6+), TypeScript, HTML5, CSS3, Tailwind CSS, Next.js",skills
+doc_04,frontend_engineering,"Tooling & Testing: Webpack, Vite, Jest, Cypress, React Testing Library, ESLint",skills
+doc_04,frontend_engineering,EXPERIENCE,experience
+doc_04,frontend_engineering,Lead Frontend Developer | PixelCraft Media | Jan 2022 - Present,experience
+doc_04,frontend_engineering,"Architected enterprise design system used across 8 production applications, reducing component duplication by 45%.",experience
+doc_04,frontend_engineering,"Migrated legacy single-page application to Next.js 14, improving Core Web Vitals.",experience
+doc_04,frontend_engineering,Mentored 4 junior engineers on accessible web development (WCAG 2.1 AA compliance).,experience
+doc_04,frontend_engineering,EDUCATION,education
+doc_04,frontend_engineering,"Bachelor of Fine Arts in Digital Media Design, University of Texas at Austin, 2018",education
+doc_04,frontend_engineering,FEATURED PROJECTS,projects
+doc_04,frontend_engineering,"Accessible UI Component Library - Authored a fully headless, ARIA-compliant React component library.",projects
+doc_12,data_engineering,"ANANYA IYER | Atlanta, GA | [REDACTED_EMAIL]",other
+doc_12,data_engineering,OBJECTIVE STATEMENT,summary
+doc_12,data_engineering,Data Engineer committed to designing fault-tolerant real-time data pipelines and scalable analytics infrastructure.,summary
+doc_12,data_engineering,TECHNICAL SKILLS,skills
+doc_12,data_engineering,"Big Data: Apache Spark, Kafka, Apache Airflow, Hadoop, Hive",skills
+doc_12,data_engineering,"Databases & Clouds: PostgreSQL, Cassandra, AWS Redshift, Snowflake, S3",skills
+doc_12,data_engineering,"Languages: Python, Scala, SQL, Bash",skills
+doc_12,data_engineering,PROFESSIONAL BACKGROUND,experience
+doc_12,data_engineering,Data Pipeline Engineer | Metro Analytics Hub | 2021 - Present,experience
+doc_12,data_engineering,Built streaming ingestion pipelines using Apache Kafka and Spark Streaming processing 15M records daily.,experience
+doc_12,data_engineering,Orchestrated complex DAG workflows in Apache Airflow with automated retry and backfill logic.,experience
+doc_12,data_engineering,EDUCATION & DEGREES,education
+doc_12,data_engineering,"M.S. in Computer Science, Georgia Institute of Technology, 2021",education
+doc_12,data_engineering,"B.E. in Information Technology, Anna University, 2019",education
+doc_12,data_engineering,KEY ACHIEVEMENTS & PROJECTS,projects
+doc_12,data_engineering,Lakehouse Schema Evolution Manager - Tool to track Delta Lake schema changes and alert downstream consumers.,projects

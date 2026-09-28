@@ -1,0 +1,165 @@
+document_id,domain,text,label
+doc_02,data_analytics,"JORDAN TAYLOR | Chicago, IL | [REDACTED_EMAIL]",other
+doc_02,data_analytics,EDUCATION,education
+doc_02,data_analytics,"Master of Science in Business Analytics, Midwest Technical Institute, 2021",education
+doc_02,data_analytics,"Bachelor of Science in Statistics, University of Illinois, 2019",education
+doc_02,data_analytics,SKILLS & COMPETENCIES,skills
+doc_02,data_analytics,"Data Analysis & Modeling: SQL, Python (Pandas, NumPy, Scikit-Learn), R, Statistical Inference",skills
+doc_02,data_analytics,"Visualization & BI: Tableau, Power BI, Matplotlib, Seaborn",skills
+doc_02,data_analytics,"Data Warehousing: Snowflake, Google BigQuery, dbt, Apache Airflow",skills
+doc_02,data_analytics,WORK HISTORY,experience
+doc_02,data_analytics,Senior Data Analyst | Insightful Retail Analytics | July 2021 - Present,experience
+doc_02,data_analytics,"Engineered automated reporting pipelines in dbt and BigQuery, eliminating 15 hours of manual weekly reporting.",experience
+doc_02,data_analytics,"Designed and analyzed 24 A/B tests for checkout flow optimizations, generating 4.5% conversion uplift.",experience
+doc_02,data_analytics,Built interactive executive dashboards in Tableau tracking customer lifetime value (LTV) and churn metrics.,experience
+doc_02,data_analytics,KEY PROJECTS,projects
+doc_02,data_analytics,Customer Churn Prediction Engine - Developed a predictive classification pipeline using Scikit-Learn and Pandas.,projects
+doc_02,data_analytics,"Retail Basket Market Analysis - Discovered cross-selling product associations from 500,000 retail transactions.",projects
+doc_03,machine_learning,"SAMIRA KHAN | Seattle, WA | [REDACTED_EMAIL]",other
+doc_03,machine_learning,CAREER OBJECTIVE,summary
+doc_03,machine_learning,Motivated Computer Science graduate student seeking a Machine Learning Engineering Internship to apply deep learning and NLP.,summary
+doc_03,machine_learning,EDUCATION BACKGROUND,education
+doc_03,machine_learning,"M.S. in Computer Science (Concentration: Artificial Intelligence), University of Washington, 2025",education
+doc_03,machine_learning,"B.S. in Computer Engineering, Purdue University, 2023",education
+doc_03,machine_learning,RELEVANT COURSEWORK,education
+doc_03,machine_learning,"Deep Learning, Natural Language Processing, Computer Vision, Distributed Systems, Reinforcement Learning",education
+doc_03,machine_learning,TECHNICAL EXPERTISE,skills
+doc_03,machine_learning,"ML & Deep Learning: PyTorch, TensorFlow, Hugging Face Transformers, Scikit-Learn, SciPy",skills
+doc_03,machine_learning,"Languages & Tools: Python, C++, SQL, Docker, Git, Linux, Weights & Biases",skills
+doc_03,machine_learning,RESEARCH & PROJECTS,projects
+doc_03,machine_learning,Clinical Note Entity Recognizer - Fine-tuned BERT-based transformer model using PyTorch to extract medical entities.,projects
+doc_03,machine_learning,Evaluated token classification performance using sequence labeling F1-score and confusion matrices.,projects
+doc_03,machine_learning,EXPERIENCE,experience
+doc_03,machine_learning,Graduate Research Assistant | UW NLP Lab | September 2023 - Present,experience
+doc_03,machine_learning,Conducted empirical research on parameter-efficient fine-tuning (LoRA) for large language models.,experience
+doc_03,machine_learning,Software Engineering Intern | DataWave Systems | June 2022 - August 2022,experience
+doc_06,cybersecurity,"PRIYA PATEL | Dallas, TX | [REDACTED_EMAIL]",other
+doc_06,cybersecurity,PROFESSIONAL SUMMARY,summary
+doc_06,cybersecurity,Cybersecurity analyst trainee with practical experience in network vulnerability scanning and SIEM log analysis.,summary
+doc_06,cybersecurity,CERTIFICATIONS,certifications
+doc_06,cybersecurity,CompTIA Security+ (SY0-601) - Certified October 2023,certifications
+doc_06,cybersecurity,Cisco Certified Support Technician (CCST) Cybersecurity - May 2023,certifications
+doc_06,cybersecurity,AWS Certified Cloud Practitioner - January 2024,certifications
+doc_06,cybersecurity,TECHNICAL SKILLS,skills
+doc_06,cybersecurity,"Security Tools: Wireshark, Nmap, Nessus, Splunk, Metasploit, Burp Suite",skills
+doc_06,cybersecurity,"Operating Systems & Networking: Linux (Kali), Windows Server, TCP/IP, Firewalls, Snort",skills
+doc_06,cybersecurity,PRACTICAL EXPERIENCE,experience
+doc_06,cybersecurity,Information Security Intern | ShieldGate Defense | June 2023 - Present,experience
+doc_06,cybersecurity,"Monitored security alerts in Splunk SIEM across 350 endpoints, triaging potential phishing events.",experience
+doc_06,cybersecurity,"Conducted internal vulnerability assessments using Nessus, documenting 14 high-severity CVEs.",experience
+doc_06,cybersecurity,EDUCATION,education
+doc_06,cybersecurity,"Associate of Applied Science in Cybersecurity, Dallas College, Graduated May 2023",education
+doc_06,cybersecurity,LAB PROJECTS,projects
+doc_06,cybersecurity,Defensive Home Lab Infrastructure - Configured virtualized enterprise lab running pfSense firewall and Security Onion.,projects
+doc_07,project_management,"ELENA ROSTOVA | New York, NY | [REDACTED_EMAIL]",other
+doc_07,project_management,EXECUTIVE SUMMARY,summary
+doc_07,project_management,Results-driven Technical Project Manager with 7+ years leading cross-functional agile teams delivering software products.,summary
+doc_07,project_management,CORE COMPETENCIES,skills
+doc_07,project_management,"Methodologies: Agile, Scrum, Kanban, Waterfall, SDLC, Sprint Planning",skills
+doc_07,project_management,"Project Tools: Jira, Confluence, Asana, Monday.com, Trello, MS Project",skills
+doc_07,project_management,"Strategy: Stakeholder Management, OKRs, Backlog Grooming, Risk Management",skills
+doc_07,project_management,PROFESSIONAL EXPERIENCE,experience
+doc_07,project_management,Senior Technical Project Manager | Finovate Technologies | September 2020 - Present,experience
+doc_07,project_management,"Facilitated daily standups, sprint planning, and retrospective meetings for two distributed engineering squads.",experience
+doc_07,project_management,Delivered a core payment gateway integration on schedule and 8% under budget.,experience
+doc_07,project_management,CERTIFICATIONS & CREDENTIALS,certifications
+doc_07,project_management,"Certified ScrumMaster (CSM) - Scrum Alliance, 2019",certifications
+doc_07,project_management,"Project Management Professional (PMP) - PMI, 2021",certifications
+doc_07,project_management,EDUCATION,education
+doc_07,project_management,"Bachelor of Business Administration in MIS, Pace University, 2016",education
+doc_08,junior_developer,"TAYLOR BROOKS | Austin, TX | [REDACTED_EMAIL]",other
+doc_08,junior_developer,WORK EXPERIENCE,experience
+doc_08,junior_developer,Junior Python Developer | Local Tech Hub | 2023 - Present,experience
+doc_08,junior_developer,Helped build internal data entry tools using Python and SQLite. Fixed bug tickets and assisted with database maintenance.,experience
+doc_08,junior_developer,Wrote simple unit tests with pytest. Worked with Git for version control.,experience
+doc_08,junior_developer,SKILLS,skills
+doc_08,junior_developer,"Python, SQLite, Git, HTML, Linux",skills
+doc_09,devops_cloud,"DEVIN REED | Seattle, WA | [REDACTED_EMAIL]",other
+doc_09,devops_cloud,SUMMARY,summary
+doc_09,devops_cloud,"DevOps Engineer specializing in Kubernetes infrastructure, CI/CD automation, and cloud security compliance.",summary
+doc_09,devops_cloud,AREAS OF EXPERTISE,skills
+doc_09,devops_cloud,"Cloud Platforms: AWS (EKS, IAM, VPC), GCP, Terraform, Ansible",skills
+doc_09,devops_cloud,"Containers: Docker, Kubernetes, Helm, ArgoCD, Prometheus, Grafana",skills
+doc_09,devops_cloud,"Scripting: Python, Bash, Go",skills
+doc_09,devops_cloud,EMPLOYMENT HISTORY,experience
+doc_09,devops_cloud,Senior DevOps Engineer | CloudScale Inc | 2021 - Present,experience
+doc_09,devops_cloud,Maintained multi-region Kubernetes clusters hosting 120+ microservices with 99.99% uptime.,experience
+doc_09,devops_cloud,Automated infrastructure provisioning via Terraform and implemented GitOps workflows with ArgoCD.,experience
+doc_09,devops_cloud,CERTIFICATIONS,certifications
+doc_09,devops_cloud,"Certified Kubernetes Administrator (CKA), Linux Foundation, 2022",certifications
+doc_09,devops_cloud,"AWS Certified Solutions Architect - Professional, 2023",certifications
+doc_09,devops_cloud,ACADEMIC BACKGROUND,education
+doc_09,devops_cloud,"B.S. in Computer Network Security, Oregon State University, 2019",education
+doc_10,mobile_developer,"CHLOE MARTINEZ | San Diego, CA | [REDACTED_EMAIL]",other
+doc_10,mobile_developer,PROFESSIONAL PROFILE,summary
+doc_10,mobile_developer,Mobile Application Developer with 4 years designing iOS and cross-platform mobile solutions with Flutter and Swift.,summary
+doc_10,mobile_developer,TECHNICAL PROFICIENCIES,skills
+doc_10,mobile_developer,"Mobile: Flutter, Dart, Swift, SwiftUI, iOS SDK, Android SDK",skills
+doc_10,mobile_developer,"Tools & APIs: Firebase, REST APIs, SQLite, Git, Fastlane, Xcode",skills
+doc_10,mobile_developer,RELEVANT EXPERIENCE,experience
+doc_10,mobile_developer,Mobile App Developer | AppVenture Studios | 2021 - Present,experience
+doc_10,mobile_developer,Published 3 consumer mobile applications to the Apple App Store and Google Play Store with over 200k downloads.,experience
+doc_10,mobile_developer,Integrated offline caching using SQLite and real-time push notifications with Firebase Cloud Messaging.,experience
+doc_10,mobile_developer,NOTABLE PROJECTS,projects
+doc_10,mobile_developer,Fitness Habit Tracker - Cross-platform Flutter app featuring state management with BLoC and automated testing.,projects
+doc_10,mobile_developer,EDUCATION,education
+doc_10,mobile_developer,"B.S. in Software Engineering, San Diego State University, 2020",education
+doc_11,qa_automation,"VIKTOR NOVAK | Boston, MA | [REDACTED_EMAIL]",other
+doc_11,qa_automation,CAREER SUMMARY,summary
+doc_11,qa_automation,"QA Automation Engineer with deep expertise in Cypress, Selenium, API testing, and performance validation.",summary
+doc_11,qa_automation,SKILLS MATRIX,skills
+doc_11,qa_automation,"Test Automation: Cypress, Selenium WebDriver, Playwright, Jest, Pytest",skills
+doc_11,qa_automation,"API & Performance Testing: Postman, JMeter, REST Assured, K6",skills
+doc_11,qa_automation,EXPERIENCE SUMMARY,experience
+doc_11,qa_automation,Senior QA Engineer | QualiTech Systems | 2020 - Present,experience
+doc_11,qa_automation,"Developed test automation frameworks in TypeScript and Cypress, cutting regression cycle time from 3 days to 4 hours.",experience
+doc_11,qa_automation,Integrated automated test suites into GitLab CI/CD pipelines with failure alert webhooks.,experience
+doc_11,qa_automation,PROJECTS,projects
+doc_11,qa_automation,Automated Performance Benchmark Harness - Python and K6 load testing utility measuring API latency under stress.,projects
+doc_11,qa_automation,EDUCATION,education
+doc_11,qa_automation,"B.S. in Computer Science, Northeastern University, 2018",education
+doc_11,qa_automation,CERTIFICATIONS,certifications
+doc_11,qa_automation,"ISTQB Certified Tester Foundation Level (CTFL), 2019",certifications
+doc_13,fullstack_engineering,"DANIEL KIM | Los Angeles, CA | [REDACTED_EMAIL]",other
+doc_13,fullstack_engineering,SUMMARY,summary
+doc_13,fullstack_engineering,"Full-Stack Engineer with proficiency in React, Node.js, and relational database systems.",summary
+doc_13,fullstack_engineering,TECHNICAL COMPETENCIES,skills
+doc_13,fullstack_engineering,"Frontend: React, Redux, Next.js, HTML5, CSS3, Tailwind CSS",skills
+doc_13,fullstack_engineering,"Backend: Node.js, Express, Python, Django, REST APIs, GraphQL",skills
+doc_13,fullstack_engineering,"Databases & Tools: PostgreSQL, MongoDB, Docker, Git, Jest",skills
+doc_13,fullstack_engineering,WORK EXPERIENCE,experience
+doc_13,fullstack_engineering,Full Stack Developer | Nexa Digital Solutions | 2022 - Present,experience
+doc_13,fullstack_engineering,"Constructed responsive web portals utilizing React, TypeScript, and Express.js backend services.",experience
+doc_13,fullstack_engineering,Authored database migration scripts for PostgreSQL and reduced API response times through Redis caching.,experience
+doc_13,fullstack_engineering,PROJECTS,projects
+doc_13,fullstack_engineering,"Collaborative Whiteboard App - Real-time canvas application built using WebSockets, React, and Node.js.",projects
+doc_13,fullstack_engineering,EDUCATION,education
+doc_13,fullstack_engineering,"B.S. in Computer Science, UCLA, 2022",education
+doc_14,product_management,"SARAH JENKINS | Seattle, WA | [REDACTED_EMAIL]",other
+doc_14,product_management,PROFESSIONAL PROFILE,summary
+doc_14,product_management,Product Manager with 6 years leading enterprise SaaS products from ideation to general availability.,summary
+doc_14,product_management,CORE SKILLS,skills
+doc_14,product_management,"Product Strategy: Product Discovery, User Research, Roadmapping, PRDs, Customer Interviews",skills
+doc_14,product_management,"Analytics & Tools: Amplitude, Mixpanel, SQL, Jira, Confluence, Figma",skills
+doc_14,product_management,PROFESSIONAL EXPERIENCE,experience
+doc_14,product_management,Senior Product Manager | CloudConnect | 2020 - Present,experience
+doc_14,product_management,Led cross-functional team of 12 engineers and 2 product designers to launch enterprise billing platform.,experience
+doc_14,product_management,Grew annual recurring revenue (ARR) from $2.1M to $8.5M over two fiscal years.,experience
+doc_14,product_management,EDUCATION,education
+doc_14,product_management,"B.A. in Economics & Information Science, University of Washington, 2017",education
+doc_14,product_management,CERTIFICATIONS,certifications
+doc_14,product_management,"Pragmatic Institute Certified (PMC-III), 2021",certifications
+doc_15,systems_embedded,"LUCAS SILVA | San Jose, CA | [REDACTED_EMAIL]",other
+doc_15,systems_embedded,SUMMARY STATEMENT,summary
+doc_15,systems_embedded,"Embedded Systems Engineer focused on low-power firmware development, RTOS kernels, and hardware communication protocols.",summary
+doc_15,systems_embedded,SKILLS,skills
+doc_15,systems_embedded,"Firmware & Languages: C, C++, Assembly, FreeRTOS, Embedded Linux",skills
+doc_15,systems_embedded,"Protocols & Hardware: I2C, SPI, UART, CAN bus, Oscilloscopes, Logic Analyzers",skills
+doc_15,systems_embedded,WORK EXPERIENCE,experience
+doc_15,systems_embedded,Firmware Engineer | IoT Sensor Networks | 2021 - Present,experience
+doc_15,systems_embedded,Developed device drivers and power management algorithms in C for ARM Cortex-M microcontrollers.,experience
+doc_15,systems_embedded,"Reduced sleep mode current consumption by 40%, extending battery life of sensor nodes to 3 years.",experience
+doc_15,systems_embedded,PROJECTS,projects
+doc_15,systems_embedded,Custom RTOS Scheduler - Designed round-robin task scheduler on STM32 microcontroller.,projects
+doc_15,systems_embedded,EDUCATION,education
+doc_15,systems_embedded,"B.S. in Electrical and Computer Engineering, San Jose State University, 2020",education

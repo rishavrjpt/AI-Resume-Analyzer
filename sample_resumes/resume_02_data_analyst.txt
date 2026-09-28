@@ -1,0 +1,34 @@
+JORDAN TAYLOR
+Chicago, IL | jordan.taylor@example.local | (555) 010-0002 | linkedin.com/in/example-jordantaylor
+
+EDUCATION
+Master of Science in Business Analytics
+Midwest Technical Institute, 2021
+Bachelor of Science in Statistics
+University of Illinois, 2019
+
+SKILLS & COMPETENCIES
+- Data Analysis & Modeling: SQL, Python (Pandas, NumPy, Scikit-Learn), R, Statistical Inference, A/B Testing
+- Visualization & BI: Tableau, Power BI, Matplotlib, Seaborn
+- Data Warehousing & ETL: Snowflake, Google BigQuery, dbt, Apache Airflow
+- Office & Collaboration: Excel (VLOOKUP, Pivot Tables, Macros), Jira, Git
+
+PROFESSIONAL EXPERIENCE
+Senior Data Analyst | Insightful Retail Analytics | July 2021 - Present
+* Engineered automated reporting pipelines in dbt and BigQuery, eliminating 15 hours of manual weekly reporting.
+* Designed and analyzed 24 A/B tests for checkout flow optimizations, generating an estimated 4.5% conversion uplift.
+* Built interactive executive dashboards in Tableau tracking customer lifetime value (LTV) and churn metrics.
+* Partnered with product and marketing managers to translate complex analytics findings into actionable campaign strategies.
+
+Data Analyst | Horizon Financial Group | June 2019 - August 2020
+* Queried complex financial transactions across PostgreSQL data warehouses using advanced SQL window functions.
+* Cleaned and imputed missing customer behavioral data using Python (Pandas and Scipy).
+* Created weekly risk-scoring dashboards in Power BI distributed to senior executive stakeholders.
+
+KEY PROJECTS
+Customer Churn Prediction Engine
+* Developed a predictive classification pipeline using Scikit-Learn and Pandas to forecast quarterly customer cancellations.
+* Achieved 82% recall on churn risk identification and presented findings via an interactive Streamlit application.
+
+Retail Basket Market Analysis
+* Implemented association rule mining in Python to discover cross-selling product associations from 500,000 retail transactions.

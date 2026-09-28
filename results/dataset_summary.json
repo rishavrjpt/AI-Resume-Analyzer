@@ -1,0 +1,60 @@
+{
+  "dataset_name": "ResumeLens Curated Resume Section & Evaluation Corpus",
+  "version": "1.0.0",
+  "description": "Synthetically authored and curated resume sections, skill spans, and matching pairs for reproducible ML development.",
+  "license": "Creative Commons Zero (CC0 1.0 Universal) - Public Domain",
+  "random_seed": 42,
+  "total_documents": 16,
+  "total_labeled_lines": 243,
+  "classes": [
+    "other",
+    "summary",
+    "skills",
+    "experience",
+    "education",
+    "projects",
+    "certifications"
+  ],
+  "label_distribution": {
+    "experience": 69,
+    "skills": 50,
+    "education": 37,
+    "summary": 29,
+    "projects": 28,
+    "other": 16,
+    "certifications": 14
+  },
+  "split_counts": {
+    "train": 164,
+    "val": 28,
+    "test": 51,
+    "total_lines": 243,
+    "total_documents": 16,
+    "train_documents": [
+      "doc_08",
+      "doc_10",
+      "doc_06",
+      "doc_07",
+      "doc_15",
+      "doc_11",
+      "doc_13",
+      "doc_09",
+      "doc_02",
+      "doc_03",
+      "doc_14"
+    ],
+    "val_documents": [
+      "doc_16",
+      "doc_05"
+    ],
+    "test_documents": [
+      "doc_12",
+      "doc_01",
+      "doc_04"
+    ]
+  },
+  "skill_eval_samples": 8,
+  "matching_eval_pairs": 12,
+  "anti_leakage": "Split performed strictly at document_id level. Zero document overlap across train, val, and test.",
+  "pii_safeguards": "All direct identifiers (emails, phones) masked or synthetic."
+}

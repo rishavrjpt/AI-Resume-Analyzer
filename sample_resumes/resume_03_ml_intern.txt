@@ -1,0 +1,39 @@
+SAMIRA KHAN
+Seattle, WA | samira.khan@example.local | (555) 010-0003 | github.com/example/samirakhan
+
+OBJECTIVE
+Motivated Computer Science graduate student seeking a Machine Learning Engineering Internship to apply skills in deep learning, natural language processing, and scalable model deployment.
+
+EDUCATION
+M.S. in Computer Science (Concentration: Artificial Intelligence)
+University of Washington, Expected Graduation: June 2025 | Current GPA: 3.92
+B.S. in Computer Engineering
+Purdue University, Graduated May 2023
+
+RELEVANT COURSEWORK
+Deep Learning, Natural Language Processing, Computer Vision, Distributed Systems, Reinforcement Learning
+
+TECHNICAL SKILLS
+Languages: Python, C++, SQL, Bash
+ML & Deep Learning: PyTorch, TensorFlow, Hugging Face Transformers, Scikit-Learn, SciPy
+NLP & Data: spaCy, NLTK, Pandas, NumPy, OpenCV
+Infrastructure: Docker, Git, Linux, Weights & Biases
+
+ACADEMIC & OPEN SOURCE PROJECTS
+Clinical Note Entity Recognizer (NLP)
+• Fine-tuned a BERT-based transformer model using Hugging Face and PyTorch to extract medical entities from clinical summaries.
+• Evaluated token classification performance using sequence labeling F1-score and confusion matrices.
+• Deployed an interactive demo on Hugging Face Spaces using Gradio for clinician evaluation.
+
+Multi-Agent Reinforcement Learning Simulator
+• Implemented proximal policy optimization (PPO) in PyTorch to train cooperating autonomous agents in a grid world.
+• Analyzed convergence properties across varying reward structures and batch sizes.
+
+RESEARCH & WORK EXPERIENCE
+Graduate Research Assistant | UW NLP Lab | September 2023 - Present
+• Conducted empirical research on parameter-efficient fine-tuning (LoRA) for large language models under resource constraints.
+• Co-authored submission to an academic workshop detailing vocabulary pruning techniques for domain adaptation.
+
+Software Engineering Intern | DataWave Systems | June 2022 - August 2022
+• Developed Python scripts to preprocess and validate 10TB of sensor telemetry data stored in Amazon S3.
+• Optimized data loading routines, decreasing ETL pipeline latency by 25%.

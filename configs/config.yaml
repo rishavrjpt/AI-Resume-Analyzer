@@ -1,0 +1,39 @@
+app:
+  name: "ResumeLens AI"
+  version: "1.0.0"
+  description: "NLP-powered resume and job description analyzer with ML testing dashboard"
+  host: "127.0.0.1"
+  port: 8000
+  cors_origins: ["*"]
+  max_upload_size_mb: 5
+  allowed_file_types: [".pdf", ".docx", ".txt"]
+
+paths:
+  sample_resumes_dir: "sample_resumes"
+  sample_cases_file: "sample_resumes/expected_test_cases.json"
+  sample_jobs_file: "sample_resumes/sample_job_descriptions.json"
+  skills_taxonomy: "data/taxonomy/skills.json"
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  models_dir: "models"
+  results_dir: "results"
+
+models:
+  section_classifier:
+    model_file: "models/section_classifier.joblib"
+    vectorizer_file: "models/section_vectorizer.joblib"
+    label_encoder_file: "models/section_labels.joblib"
+    type: "TF-IDF + Linear Classifier (SGD / LogisticRegression)"
+  semantic_matcher:
+    model_name: "sentence-transformers/all-MiniLM-L6-v2"
+    device: "cpu"
+    cache_folder: "models/cache"
+    enabled: true
+  lexical_matcher:
+    ngram_range: [1, 2]
+    max_features: 5000
+
+privacy:
+  retain_uploaded_files: false
+  anonymize_logs: true
+  allow_external_llm: false

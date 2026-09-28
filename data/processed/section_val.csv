@@ -1,0 +1,29 @@
+document_id,domain,text,label
+doc_05,backend_engineering,"MARCUS VANCE | Denver, CO | [REDACTED_EMAIL]",other
+doc_05,backend_engineering,PROFILE,summary
+doc_05,backend_engineering,"Backend Software Engineer focusing on microservice architectures, event-driven systems, and relational database optimization.",summary
+doc_05,backend_engineering,WORK EXPERIENCE,experience
+doc_05,backend_engineering,Senior Backend Engineer | Apex Logistics Platform | March 2021 - Present,experience
+doc_05,backend_engineering,"Built real-time package tracking microservices using Go, gRPC, and Apache Kafka handling 50,000 events/second.",experience
+doc_05,backend_engineering,Designed database schemas in PostgreSQL and implemented caching layers using Redis clusters.,experience
+doc_05,backend_engineering,Provisioned cloud infrastructure on GCP using Kubernetes and Terraform for automated deployments.,experience
+doc_05,backend_engineering,TECHNICAL PROJECTS,projects
+doc_05,backend_engineering,"Event-Driven Order Processing Engine - Built fault-tolerant order pipeline using Python, FastAPI, and Pulsar.",projects
+doc_05,backend_engineering,Distributed Rate Limiter - Implemented sliding-window counter rate limiting in Go backed by Redis Lua scripts.,projects
+doc_05,backend_engineering,EDUCATION,education
+doc_05,backend_engineering,"Bachelor of Science in Information Systems, Colorado State University, 2018",education
+doc_16,ai_research,"DR. MAYA LIN | Cambridge, MA | [REDACTED_EMAIL]",other
+doc_16,ai_research,RESEARCH SUMMARY,summary
+doc_16,ai_research,"Machine Learning Researcher investigating multilingual NLP, self-supervised representation learning, and model interpretability.",summary
+doc_16,ai_research,TECHNICAL PROFICIENCIES,skills
+doc_16,ai_research,"Frameworks: PyTorch, JAX, Hugging Face Transformers, DeepSpeed, Ray",skills
+doc_16,ai_research,"Languages & Tools: Python, C++, CUDA, Git, Linux, Slurm HPC clusters",skills
+doc_16,ai_research,RESEARCH EXPERIENCE,experience
+doc_16,ai_research,Postdoctoral Researcher | MIT CSAIL | 2022 - Present,experience
+doc_16,ai_research,Published 4 first-author papers in ACL and NeurIPS exploring attention mechanism efficiency.,experience
+doc_16,ai_research,Mentored 3 graduate researchers on multi-task learning benchmarks.,experience
+doc_16,ai_research,EDUCATION,education
+doc_16,ai_research,"Ph.D. in Computer Science, Carnegie Mellon University, 2022",education
+doc_16,ai_research,"B.S. in Mathematics and Computer Science, Stanford University, 2017",education
+doc_16,ai_research,RESEARCH PROJECTS,projects
+doc_16,ai_research,Cross-Lingual Embedding Benchmark - Evaluated representations across 45 low-resource language pairs.,projects

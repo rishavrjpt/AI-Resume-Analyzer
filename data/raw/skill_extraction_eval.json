@@ -1,0 +1,79 @@
+[
+  {
+    "id": "skill_eval_01",
+    "text": "Designed REST APIs using FastAPI, PostgreSQL, and Docker deployed on AWS.",
+    "ground_truth_skills": [
+      "RESTful APIs",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "AWS"
+    ]
+  },
+  {
+    "id": "skill_eval_02",
+    "text": "Engineered automated ETL pipelines in dbt, BigQuery, and Apache Airflow with SQL queries.",
+    "ground_truth_skills": [
+      "dbt",
+      "Google BigQuery",
+      "Apache Airflow",
+      "SQL"
+    ]
+  },
+  {
+    "id": "skill_eval_03",
+    "text": "Fine-tuned BERT transformers using PyTorch and Hugging Face for token classification with spaCy.",
+    "ground_truth_skills": [
+      "Hugging Face Transformers",
+      "PyTorch",
+      "Natural Language Processing"
+    ]
+  },
+  {
+    "id": "skill_eval_04",
+    "text": "Built responsive user interfaces in React, TypeScript, Next.js, and Tailwind CSS.",
+    "ground_truth_skills": [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    "id": "skill_eval_05",
+    "text": "Implemented distributed event streaming with Apache Kafka, Go, and Redis clusters.",
+    "ground_truth_skills": [
+      "Apache Kafka",
+      "Go",
+      "Redis"
+    ]
+  },
+  {
+    "id": "skill_eval_06",
+    "text": "Triaged security incidents in Splunk SIEM and scanned network hosts using Wireshark and Nessus.",
+    "ground_truth_skills": [
+      "Splunk",
+      "Wireshark",
+      "Nessus"
+    ]
+  },
+  {
+    "id": "skill_eval_07",
+    "text": "Facilitated Agile sprint planning, Kanban boards, and Jira ticket roadmaps.",
+    "ground_truth_skills": [
+      "Agile",
+      "Scrum",
+      "Kanban",
+      "Jira"
+    ]
+  },
+  {
+    "id": "skill_eval_08",
+    "text": "Wrote comprehensive unit and regression tests in Python using Pytest and Git for version control.",
+    "ground_truth_skills": [
+      "Python",
+      "Pytest",
+      "Git"
+    ]
+  }
+]

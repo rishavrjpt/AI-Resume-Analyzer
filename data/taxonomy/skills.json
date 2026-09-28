@@ -1,0 +1,402 @@
+{
+  "version": "1.0.0",
+  "description": "Transparent taxonomy of technical skills, frameworks, tools, and methodologies with aliases and multi-word terms.",
+  "categories": [
+    "Programming Languages",
+    "Web & Frontend",
+    "Backend & Frameworks",
+    "Databases & Storage",
+    "Cloud & DevOps",
+    "Machine Learning & AI",
+    "Data Engineering & Analytics",
+    "Cybersecurity",
+    "Methodologies & Tools"
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "category": "Programming Languages",
+      "aliases": ["python", "python3", "py"]
+    },
+    {
+      "name": "JavaScript",
+      "category": "Programming Languages",
+      "aliases": ["javascript", "js", "ecmascript", "es6"]
+    },
+    {
+      "name": "TypeScript",
+      "category": "Programming Languages",
+      "aliases": ["typescript", "ts"]
+    },
+    {
+      "name": "Go",
+      "category": "Programming Languages",
+      "aliases": ["go", "golang"]
+    },
+    {
+      "name": "Java",
+      "category": "Programming Languages",
+      "aliases": ["java", "core java"]
+    },
+    {
+      "name": "C++",
+      "category": "Programming Languages",
+      "aliases": ["c++", "cpp"]
+    },
+    {
+      "name": "C#",
+      "category": "Programming Languages",
+      "aliases": ["c#", "csharp", ".net"]
+    },
+    {
+      "name": "Rust",
+      "category": "Programming Languages",
+      "aliases": ["rust", "rustlang"]
+    },
+    {
+      "name": "SQL",
+      "category": "Programming Languages",
+      "aliases": ["sql", "structured query language"]
+    },
+    {
+      "name": "R",
+      "category": "Programming Languages",
+      "aliases": ["r language", "r stats", "r programming"]
+    },
+    {
+      "name": "Bash",
+      "category": "Programming Languages",
+      "aliases": ["bash", "shell scripting", "sh", "zsh"]
+    },
+    {
+      "name": "PowerShell",
+      "category": "Programming Languages",
+      "aliases": ["powershell", "ps1"]
+    },
+    {
+      "name": "React",
+      "category": "Web & Frontend",
+      "aliases": ["react", "react.js", "reactjs"]
+    },
+    {
+      "name": "Next.js",
+      "category": "Web & Frontend",
+      "aliases": ["next.js", "nextjs", "next"]
+    },
+    {
+      "name": "Vue.js",
+      "category": "Web & Frontend",
+      "aliases": ["vue", "vue.js", "vuejs"]
+    },
+    {
+      "name": "Angular",
+      "category": "Web & Frontend",
+      "aliases": ["angular", "angularjs", "angular 2+"]
+    },
+    {
+      "name": "HTML5",
+      "category": "Web & Frontend",
+      "aliases": ["html", "html5"]
+    },
+    {
+      "name": "CSS3",
+      "category": "Web & Frontend",
+      "aliases": ["css", "css3", "scss", "sass"]
+    },
+    {
+      "name": "Tailwind CSS",
+      "category": "Web & Frontend",
+      "aliases": ["tailwind", "tailwind css", "tailwindcss"]
+    },
+    {
+      "name": "Redux",
+      "category": "Web & Frontend",
+      "aliases": ["redux", "redux toolkit", "rtk"]
+    },
+    {
+      "name": "GraphQL",
+      "category": "Web & Frontend",
+      "aliases": ["graphql", "apollo client"]
+    },
+    {
+      "name": "FastAPI",
+      "category": "Backend & Frameworks",
+      "aliases": ["fastapi", "fast api"]
+    },
+    {
+      "name": "Django",
+      "category": "Backend & Frameworks",
+      "aliases": ["django", "django rest framework", "drf"]
+    },
+    {
+      "name": "Flask",
+      "category": "Backend & Frameworks",
+      "aliases": ["flask"]
+    },
+    {
+      "name": "Spring Boot",
+      "category": "Backend & Frameworks",
+      "aliases": ["spring", "spring boot", "spring framework"]
+    },
+    {
+      "name": "Node.js",
+      "category": "Backend & Frameworks",
+      "aliases": ["node", "node.js", "nodejs", "express", "express.js"]
+    },
+    {
+      "name": "RESTful APIs",
+      "category": "Backend & Frameworks",
+      "aliases": ["rest", "rest api", "restful api", "restful apis", "restful"]
+    },
+    {
+      "name": "gRPC",
+      "category": "Backend & Frameworks",
+      "aliases": ["grpc", "protocol buffers", "protobuf"]
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "Databases & Storage",
+      "aliases": ["postgresql", "postgres", "psql"]
+    },
+    {
+      "name": "MySQL",
+      "category": "Databases & Storage",
+      "aliases": ["mysql", "mariadb"]
+    },
+    {
+      "name": "MongoDB",
+      "category": "Databases & Storage",
+      "aliases": ["mongodb", "mongo"]
+    },
+    {
+      "name": "Redis",
+      "category": "Databases & Storage",
+      "aliases": ["redis", "redis cluster"]
+    },
+    {
+      "name": "SQLite",
+      "category": "Databases & Storage",
+      "aliases": ["sqlite", "sqlite3"]
+    },
+    {
+      "name": "Snowflake",
+      "category": "Databases & Storage",
+      "aliases": ["snowflake", "snowflake data warehouse"]
+    },
+    {
+      "name": "Google BigQuery",
+      "category": "Databases & Storage",
+      "aliases": ["bigquery", "google bigquery", "bq"]
+    },
+    {
+      "name": "Elasticsearch",
+      "category": "Databases & Storage",
+      "aliases": ["elasticsearch", "elastic search", "elk"]
+    },
+    {
+      "name": "Docker",
+      "category": "Cloud & DevOps",
+      "aliases": ["docker", "containerization", "containers"]
+    },
+    {
+      "name": "Kubernetes",
+      "category": "Cloud & DevOps",
+      "aliases": ["kubernetes", "k8s"]
+    },
+    {
+      "name": "AWS",
+      "category": "Cloud & DevOps",
+      "aliases": ["aws", "amazon web services", "ec2", "s3", "rds", "lambda"]
+    },
+    {
+      "name": "Google Cloud Platform",
+      "category": "Cloud & DevOps",
+      "aliases": ["gcp", "google cloud", "google cloud platform"]
+    },
+    {
+      "name": "Microsoft Azure",
+      "category": "Cloud & DevOps",
+      "aliases": ["azure", "microsoft azure"]
+    },
+    {
+      "name": "Terraform",
+      "category": "Cloud & DevOps",
+      "aliases": ["terraform", "iac", "infrastructure as code"]
+    },
+    {
+      "name": "CI/CD",
+      "category": "Cloud & DevOps",
+      "aliases": ["ci/cd", "continuous integration", "github actions", "gitlab ci", "jenkins"]
+    },
+    {
+      "name": "Git",
+      "category": "Methodologies & Tools",
+      "aliases": ["git", "github", "gitlab", "version control"]
+    },
+    {
+      "name": "Linux",
+      "category": "Cloud & DevOps",
+      "aliases": ["linux", "unix", "ubuntu", "kali linux"]
+    },
+    {
+      "name": "PyTorch",
+      "category": "Machine Learning & AI",
+      "aliases": ["pytorch", "torch"]
+    },
+    {
+      "name": "TensorFlow",
+      "category": "Machine Learning & AI",
+      "aliases": ["tensorflow", "tf", "keras"]
+    },
+    {
+      "name": "Scikit-Learn",
+      "category": "Machine Learning & AI",
+      "aliases": ["scikit-learn", "sklearn", "scikit learn"]
+    },
+    {
+      "name": "Hugging Face Transformers",
+      "category": "Machine Learning & AI",
+      "aliases": ["transformers", "hugging face", "huggingface", "bert"]
+    },
+    {
+      "name": "Natural Language Processing",
+      "category": "Machine Learning & AI",
+      "aliases": ["nlp", "natural language processing", "text classification"]
+    },
+    {
+      "name": "Computer Vision",
+      "category": "Machine Learning & AI",
+      "aliases": ["computer vision", "cv", "opencv"]
+    },
+    {
+      "name": "Deep Learning",
+      "category": "Machine Learning & AI",
+      "aliases": ["deep learning", "neural networks", "dl"]
+    },
+    {
+      "name": "Reinforcement Learning",
+      "category": "Machine Learning & AI",
+      "aliases": ["reinforcement learning", "rl", "ppo"]
+    },
+    {
+      "name": "Pandas",
+      "category": "Data Engineering & Analytics",
+      "aliases": ["pandas"]
+    },
+    {
+      "name": "NumPy",
+      "category": "Data Engineering & Analytics",
+      "aliases": ["numpy"]
+    },
+    {
+      "name": "SciPy",
+      "category": "Data Engineering & Analytics",
+      "aliases": ["scipy"]
+    },
+    {
+      "name": "Tableau",
+      "category": "Data Engineering & Analytics",
+      "aliases": ["tableau"]
+    },
+    {
+      "name": "Power BI",
+      "category": "Data Engineering & Analytics",
+      "aliases": ["power bi", "powerbi"]
+    },
+    {
+      "name": "Apache Airflow",
+      "category": "Data Engineering & Analytics",
+      "aliases": ["airflow", "apache airflow"]
+    },
+    {
+      "name": "Apache Kafka",
+      "category": "Data Engineering & Analytics",
+      "aliases": ["kafka", "apache kafka"]
+    },
+    {
+      "name": "RabbitMQ",
+      "category": "Backend & Frameworks",
+      "aliases": ["rabbitmq"]
+    },
+    {
+      "name": "dbt",
+      "category": "Data Engineering & Analytics",
+      "aliases": ["dbt"]
+    },
+    {
+      "name": "A/B Testing",
+      "category": "Data Engineering & Analytics",
+      "aliases": ["a/b testing", "ab testing", "split testing", "hypothesis testing"]
+    },
+    {
+      "name": "Wireshark",
+      "category": "Cybersecurity",
+      "aliases": ["wireshark"]
+    },
+    {
+      "name": "Splunk",
+      "category": "Cybersecurity",
+      "aliases": ["splunk", "siem"]
+    },
+    {
+      "name": "Nessus",
+      "category": "Cybersecurity",
+      "aliases": ["nessus", "vulnerability scanner"]
+    },
+    {
+      "name": "Nmap",
+      "category": "Cybersecurity",
+      "aliases": ["nmap"]
+    },
+    {
+      "name": "Burp Suite",
+      "category": "Cybersecurity",
+      "aliases": ["burp suite", "burpsuite"]
+    },
+    {
+      "name": "Metasploit",
+      "category": "Cybersecurity",
+      "aliases": ["metasploit"]
+    },
+    {
+      "name": "Agile",
+      "category": "Methodologies & Tools",
+      "aliases": ["agile", "agile methodology"]
+    },
+    {
+      "name": "Scrum",
+      "category": "Methodologies & Tools",
+      "aliases": ["scrum", "scrum master", "sprint planning"]
+    },
+    {
+      "name": "Kanban",
+      "category": "Methodologies & Tools",
+      "aliases": ["kanban"]
+    },
+    {
+      "name": "Jira",
+      "category": "Methodologies & Tools",
+      "aliases": ["jira", "atlassian"]
+    },
+    {
+      "name": "Confluence",
+      "category": "Methodologies & Tools",
+      "aliases": ["confluence"]
+    },
+    {
+      "name": "Pytest",
+      "category": "Methodologies & Tools",
+      "aliases": ["pytest", "unit testing", "integration testing"]
+    },
+    {
+      "name": "Jest",
+      "category": "Methodologies & Tools",
+      "aliases": ["jest", "unit testing"]
+    },
+    {
+      "name": "Cypress",
+      "category": "Methodologies & Tools",
+      "aliases": ["cypress", "e2e testing"]
+    }
+  ]
+}
