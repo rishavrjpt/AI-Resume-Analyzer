@@ -1,6 +1,6 @@
 /**
- * ResumeLens AI — Client-Side Application Logic
- * Pure vanilla JavaScript with accessible UI state management and backend integration.
+ * ResumeScope — Client-Side Application Logic
+ * Professional UI state management and backend integration.
  */
 
 // Global state
@@ -839,7 +839,7 @@ function downloadTextReport() {
   const comp = a.job_comparison;
 
   let report = `====================================================\n`;
-  report += `RESUMELENS AI — ANALYSIS REPORT\n`;
+  report += `RESUMESCOPE — DOCUMENT ALIGNMENT REPORT\n`;
   report += `Document: ${doc.filename} (${doc.file_type.toUpperCase()}, ${doc.word_count} words)\n`;
   report += `Date: ${new Date().toLocaleString()}\n`;
   report += `====================================================\n\n`;
@@ -880,18 +880,18 @@ function downloadTextReport() {
   report += `It does NOT predict ATS pass rates, interview calls, or hiring outcomes.\n`;
   report += `====================================================\n`;
 
-  downloadBlob(new Blob([report], { type: 'text/plain' }), `ResumeLens_Report_${doc.filename}.txt`);
+  downloadBlob(new Blob([report], { type: 'text/plain' }), `ResumeScope_Report_${doc.filename}.txt`);
 }
 
 function downloadJsonReport() {
   if (!state.latestAnalysis) return;
   const jsonStr = JSON.stringify(state.latestAnalysis, null, 2);
-  downloadBlob(new Blob([jsonStr], { type: 'application/json' }), `ResumeLens_Analysis_${state.latestAnalysis.document_info.filename}.json`);
+  downloadBlob(new Blob([jsonStr], { type: 'application/json' }), `ResumeScope_Analysis_${state.latestAnalysis.document_info.filename}.json`);
 }
 
 function exportTestResultsJson() {
   if (!state.testResults) return;
-  downloadBlob(new Blob([JSON.stringify(state.testResults, null, 2)], { type: 'application/json' }), `ResumeLens_Test_Results_${state.testResults.run_id}.json`);
+  downloadBlob(new Blob([JSON.stringify(state.testResults, null, 2)], { type: 'application/json' }), `ResumeScope_Test_Results_${state.testResults.run_id}.json`);
 }
 
 function exportTestResultsCsv() {
@@ -915,7 +915,7 @@ function exportTestResultsCsv() {
     ].join(','));
   });
 
-  downloadBlob(new Blob([csvLines.join('\n')], { type: 'text/csv' }), `ResumeLens_Test_Results_${state.testResults.run_id}.csv`);
+  downloadBlob(new Blob([csvLines.join('\n')], { type: 'text/csv' }), `ResumeScope_Test_Results_${state.testResults.run_id}.csv`);
 }
 
 function downloadBlob(blob, filename) {

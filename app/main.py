@@ -1,5 +1,5 @@
 """
-ResumeLens AI — Main FastAPI Application
+ResumeScope — Professional Resume & Job Description Alignment Platform
 """
 
 import os
@@ -12,8 +12,8 @@ from app.api.routes import router as api_router
 
 
 app = FastAPI(
-    title="ResumeLens AI",
-    description="NLP-powered resume and job description analyzer with ML testing dashboard",
+    title="ResumeScope",
+    description="Professional resume and job description alignment platform with ML testing dashboard",
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc"

@@ -1,7 +1,7 @@
 app:
-  name: "ResumeLens AI"
+  name: "ResumeScope"
   version: "1.0.0"
-  description: "NLP-powered resume and job description analyzer with ML testing dashboard"
+  description: "Professional resume and job description alignment platform with ML testing dashboard"
   host: "127.0.0.1"
   port: 8000
   cors_origins: ["*"]
